@@ -1,34 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <!-- ajouter le lien vers la page d'accueil -->
-        <a class="navbar-brand" href="#"><img class="img-fluid" src="../img/m_MIXFOOD.png" alt="logo-mixfood"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="col-6">
-            <div class="navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item p-2">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item dropdown p-2">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Pizza</a></li>
-                            <li><a class="dropdown-item" href="#">Sushi</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Qui sommes-nous ?</a>
-                    </li>
-                    <li class="nav-item p-2">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end p-4">
+    <img src="../img/m_MIXFOOD.png" alt="logo_mixfood">
+    <a class="navbar-brand" href="#">Accueil</a>
+    <button class="btn btn-success ml-auto mr-1">Se connecter</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Pizza</a></li>
+                    <li><a class="dropdown-item" href="#">Sushi</a></li>
                 </ul>
-            </div>
-        </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Qui sommes-nous?</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
     </div>
 </nav>

@@ -1,7 +1,18 @@
 body {
-    background-color: dimgray;
-
     font-family: 'Kodchasan', sans-serif;
-
     font-size: 1.5em;
+}
+
+nav img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+nav li {
+margin-left: 1.5em;
+}
+
+nav a {
+    margin-left: 1.5em;
 }

@@ -13,7 +13,7 @@
             <div class="col-lg-3  d-none d-md-block d-lg-block">
             </div>
             <div class=" col-6 col-lg-2">
-                <h6 class="text-upper text-dark">Moyen de paiementst</h6>
+                <h6 class="text-upper text-dark">Moyen de paiements</h6>
                 <P>Paypal</P>
                 <P>Espece</P>
                 <P>Carte bancaire</P>
@@ -27,14 +27,15 @@
             <div class="col">
                 <div class="row">
                     <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfoo" class=" align-center pt-5"></p>
-
                 </div>
 
             </div>
 
         </div><!-- /row -->
         <div class="row">
-            <p class="fw-light"> &copy;<?php echo date("Y");  ?> mixfood tous droits réservés </p>
+        <div class="col-lg-2"></div>
+           <div class="col-lg-10"> <p class="fw-light "> &copy;<?php echo date("Y");  ?> mixfood tous droits réservés </p></div>
+           
         </div>
 
     </div>

@@ -11,13 +11,13 @@
                 </ul>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Qui sommes-nous?</a>
+                <a class="nav-link" href="#">Qui sommes-nous ?</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Contact</a>
             </li>
             <li>
-                <button class="btn btn-success ml-auto mr-1">Se connecter</button>
+                <button class="btn btn-success ml-auto mr-1">Connexion</button>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>

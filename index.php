@@ -27,13 +27,7 @@
     include 'inc/navbar.php';
     ?>
 
-
-
-
-
-
-
-<?php
+    <?php
     include 'inc/footer.php';
     ?>
     <!-- Optional JavaScript; choose one of the two! -->

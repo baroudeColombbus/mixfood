@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end p-4">
-    <img src="../img/m_MIXFOOD.png" alt="logo_mixfood">
+    <img class="img-fluid imgNav" src="../img/MIXFOOD2.png" alt="logo_mixfood" width="90" height="90">
     <a class="navbar-brand" href="#">Accueil</a>
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
         <ul class="navbar-nav text-right">

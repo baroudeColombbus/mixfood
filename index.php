@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@500&family=Stylish&display=swap" rel="stylesheet">
 
     <title>MIXFOOD</title>
-
 </head>
 
 <body class="bg-light">

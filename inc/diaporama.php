@@ -1,5 +1,5 @@
 <!-- Caroussel de l'accueil -->
-<div class="container bg-dark">
+<div class="container bg-dark p-5">
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

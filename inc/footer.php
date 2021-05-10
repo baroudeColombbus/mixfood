@@ -13,9 +13,9 @@
             </div>
             <div class=" col-6 col-lg-2">
                 <h6 class="text-upper text-dark">Moyen de paiements</h6>
-                <P>Paypal</P>
-                <P>Espece</P>
-                <P>Carte bancaire</P>
+                <p>Paypal</p>
+                <p>Espece</p>
+                <p>Carte bancaire</p>
             </div>
             <div class="col-6 col-lg-2">
                 <h6 class="text-upper text-dark">Contact</h6>
@@ -25,7 +25,7 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class=" align-center pt-5"></p>
+                    <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid align-center pt-5"></p>
                 </div>
 
             </div>

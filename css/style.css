@@ -8,6 +8,12 @@ nav {
     background-color: #043227;
 }
 
+/* nav img {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+} */
+
 nav li {
 margin-left: 1.5em;
 }

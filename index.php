@@ -22,7 +22,7 @@
     <title>MIXFOOD</title>
 </head>
 
-<body>
+<body class="bg-dark">
     <?php
     include 'inc/navbar.php';
     include 'inc/diaporama.php';

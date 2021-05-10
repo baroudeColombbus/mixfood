@@ -26,11 +26,7 @@
             </div>
             <div class="col">
                 <div class="row">
-<<<<<<< HEAD
                     <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid  align-center pt-5"></p>
-=======
-                    <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid align-center pt-5"></p>
->>>>>>> 1f38146f47864a4862e67843890d0bce9b2d4bcc
                 </div>
 
             </div>
@@ -75,7 +71,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="bp" class="form-label"> Boîte postale</label><br>4
+            <label for="bp" class="form-label"> Boîte postale</label><br>
             <img src="../img/alex.PNG" alt="">
             <input type="text" class="form-control form-control-sm " name="" id="code_postal" placeholder="boîte postale" aria-placeholder="boîte postale">
         </div>

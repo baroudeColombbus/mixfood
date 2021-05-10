@@ -26,7 +26,11 @@
             </div>
             <div class="col">
                 <div class="row">
+<<<<<<< HEAD
                     <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid  align-center pt-5"></p>
+=======
+                    <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid align-center pt-5"></p>
+>>>>>>> 1f38146f47864a4862e67843890d0bce9b2d4bcc
                 </div>
 
             </div>

@@ -52,13 +52,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <button class="btn btn-light ml-auto mr-1 mt-5">Se connecter</button>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </li>
             </ul>
         </div>
+    </div>
+    <div class="mx-5">
+        <button class="btn btn-light ml-auto mr-1 mb-1">Se connecter</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>

@@ -17,14 +17,15 @@
 
     <!-- Les typographies -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@500&family=Stylish&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,200&display=swap" rel="stylesheet">
 
     <title>MIXFOOD</title>
 </head>
 
-<body class="bg-light">
+<body>
     <?php
     include 'inc/navbar.php';
+    include 'inc/diaporama.php';
     ?>
 
     <?php

@@ -1,6 +1,13 @@
 <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end p-4">
     <img class="img-fluid imgNav" src="../img/mixfoodNoir.png" alt="logo_mixfood" width="150" height="150">
     <a class="navbar-brand" href="#">Accueil</a>
+<<<<<<< Updated upstream
+=======
+    <button  class="btn btn-success ml-auto mr-1">Se connecter</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+>>>>>>> Stashed changes
     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
         <ul class="navbar-nav text-right">
             <li class="nav-item dropdown">

@@ -1,3 +1,4 @@
+<!-- footer -->
 <footer class="container-fluid text-muted py-5 bg-warning">
     <div class="container container-sm">
         <div class="row ">
@@ -5,7 +6,7 @@
             <div class="col-lg-3 d-none d-md-block d-lg-block">
                 <div class="row">
                     <div class="col">
-                        <img src="../img/alex.PNG" alt="logo-mixfoo" class="img-fluid  mixfooter align-center pt-5">
+                        <img src="../img/mixfoodBlanc.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5">
 
                     </div>
                 </div>
@@ -26,7 +27,7 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <p class="text-center text-md-left "><img src="../img/m_MIXFOOD.png" alt="logo-mixfood" class="img-fluid  align-center pt-5"></p>
+                    <p class="text-center text-md-left "><img src="../img/mixfoodNoir.png" alt="logo-mixfood" class="img-fluid  align-center pt-5"></p>
                 </div>
 
             </div>
@@ -76,10 +77,10 @@
             <input type="text" class="form-control form-control-sm " name="" id="code_postal" placeholder="boîte postale" aria-placeholder="boîte postale">
         </div>
 
-  </form>
+    </form>
 
 
-        
+
 
 
 </footer>

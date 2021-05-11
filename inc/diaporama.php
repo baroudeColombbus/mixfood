@@ -1,5 +1,5 @@
 <!-- Caroussel de l'accueil -->
-<div class="container bg-dark p-5">
+<div class="container bg-light p-5 mb-5 mt-5">
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -8,13 +8,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="../img/pizza1.jpg" class="d-block w-100 img-fluid" alt="pizza">
+                <img src="../img/pizza1.jpg" class="d-block w-100" alt="pizza" width="50%" height="50%">
                 <div class="carousel-caption d-none d-md-block text-light">
                     <h5>Pizza faite avec amour</h5>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="../img/sushi1.jpg" class="d-block w-100 img-fluid" alt="sushi">
+                <img src="../img/sushi1.jpg" class="d-block w-100" alt="sushi" width="50%" height="50%">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Sushi confectionné avec doigté</h5>
                 </div>

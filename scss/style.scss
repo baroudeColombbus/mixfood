@@ -1,25 +1,26 @@
+$rouge: red;
+$blanc: #fff;
+$vertF: #043227;
+
+p {
+    color: $blanc;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
-    /* background-color: #043227; */
 }
 
 nav {
-    background-color: #043227;
-    
-}
-
-nav li {
-margin-left: 1.5em;
+    background-color: #043227;   
 }
 
 nav a {
-    margin: 1.5em;
+padding: 2em;
 }
 
 nav li:hover {
     background-color: rgb(255, 179, 0);
-
 }
 
 .carousselAccueil img {

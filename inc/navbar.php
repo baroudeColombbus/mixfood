@@ -1,7 +1,7 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
     <div class="container">
-        <img src="../img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 d-sm-none d-lg-block">
+        <img src="../img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3">
         <!-- <img src="../img/mixfoodNoir.png" alt="logo-mixfodd" class="mt-3 d-none"> -->
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,7 @@
         </div>
     </div>
     <div class="container-fluid col-sm-12 col-lg-1">
-        <button class="btn btn-sm btn-light mr-1 mb-1 mx-auto">Se connecter</button>
+        <button class="btn btn-md btn-warning mr-1 mb-1 mx-auto boutonNav">Se connecter</button>
     </div>
+
 </nav>

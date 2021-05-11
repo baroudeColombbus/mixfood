@@ -42,44 +42,4 @@
 
     </div>
 
-
-    <form action="" method="post">
-
-        <div class="mb-3">
-            <label for="civilite" class="form-label">Civilié</label>
-            <input class="form-control" name="civilite" list="datalistOptions" id="civilite" placeholder="Ecrire.">
-            <datalist id="datalistOptions">
-                <option value="Madame">
-                <option value="Monsieur">
-            </datalist>
-        </div>
-
-        <div class="mb-3">
-            <label for="prenom" class="form-label">prenom</label>
-            <input id="prenom" type="text" class="form-control form-control-sm " name="" placeholder="prenom" aria-placeholder="prenom">
-        </div>
-
-        <div class="mb-3">
-            <label for="nom" class="form-label">nom</label>
-            <input type="text" class="form-control form-control-sm " name="" placeholder="nom" aria-placeholder="nom">
-        </div>
-
-
-        <div class="mb-3">
-            <label for="mo_de_passe" class="form-label">Mot de passe</label>
-            <input type="text" class="form-control form-control-sm" name="" placeholder="mot de passe" aria-placeholder="mot de passe">
-        </div>
-
-        <div class="mb-3">
-            <label for="bp" class="form-label"> Boîte postale</label><br>
-            <img src="../img/alex.PNG" alt="">
-            <input type="text" class="form-control form-control-sm " name="" id="code_postal" placeholder="boîte postale" aria-placeholder="boîte postale">
-        </div>
-
-  </form>
-
-
-        
-
-
 </footer>

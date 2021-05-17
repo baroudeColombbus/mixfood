@@ -1,3 +1,7 @@
+
+
+
+
 <!doctype html>
 		<html lang="en">
 			<head>
@@ -23,6 +27,10 @@
 					.form-label:after {
 						content: "*";
 						color: red;
+					}
+
+					footer p {
+						font-size: 12px;
 					}
 				</style>
 			</head>
@@ -68,7 +76,7 @@
 				</nav>
 
 
-				<form class="row g-3" id="formulaireInscription">
+				<form method="POST" action="" class="row g-3" id="formulaireInscription">
 
 					<div class="col-6 col-md-6 etoile">
 						<label for="prenom" class="form-label ">Prénom</label>
@@ -76,7 +84,7 @@
 					</div>
 					<div class="col-6 col-md-6">
 						<label for="nom" class="form-label">Nom</label>
-						<input type="text" name="nom" class="form-control" id="nom" required>
+						<input type="text" name="nom" class="form-control " id="nom" required>
 
 					</div>
 
@@ -132,3 +140,5 @@
 			</body>
 
 		</html>
+
+		<?php  ?>

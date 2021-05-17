@@ -11,16 +11,13 @@ $border-radius-pill:          50rem;
 
 
 p {
-    color: $blanc;
+    color: black;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
-}
-
-nav {
-    background-color: #043227;   
+    background-color: $rouge;
 }
 
 nav a {
@@ -33,7 +30,7 @@ nav li:hover {
 
 .carousselAccueil img {
     width: 100%;
-    max-height: 600px;
+    max-height: 700px;
 }
 
 

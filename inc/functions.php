@@ -25,8 +25,8 @@ function jevardump($maVariable) { //la fonction nommée avec son paraétre, une 
 function executeRequete($requete, $parametres = array ()) { // utile pour toutes les requête du site
     foreach ($parametres as $indice => $valeur) {  // foreach      
         $parametres[$indice] = htmlspecialchars($valeur);// on evite les injections SQL
-        global $pdoMIXFOOD; // global nous permet de rendre la viable $pdoMIXFOOD accessible dans l'espace global du project
-        $resultat = $pdoMIXFOOD->prepare($requete); // puis prepare prépare la requête
+        global $pdoSITE; // global nous permet de rendre la viable $pdoSITE accessible dans l'espace global du project
+        $resultat = $pdoSITE->prepare($requete); // puis prepare prépare la requête
         $succes = $resultat->execute($parametres);
         if ($succes === false) {
             return false; // si la requête  n'a pas marché je renvoie false

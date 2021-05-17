@@ -1,14 +1,14 @@
+// variable de couleurs
 $rouge: red;
 $blanc: #fff;
 $vertF: #043227;
 $noir: #000;
 
-
+// variables de border radius
 $img_border_radius:             3rem;
 $border-radius-sm:            .2rem;
 $border-radius-lg:            .3rem;
 $border-radius-pill:          50rem;
-
 
 p {
     color: black;
@@ -33,21 +33,17 @@ nav li:hover {
     max-height: 700px;
 }
 
-
 footer a:link {
     color: $rouge;
 }
-
 
 .produit-menu-img{
     width: 20%;
     float: left;
   }
   
-
 .img-curve{
     border-radius: $img_border_radius;
 }
 
 
-/* bootstrap  */

@@ -60,6 +60,16 @@ var_dump($_POST['mot_de_passe']);
         $message .='<div class="alert alert-danger">le code postal n\'est pas valide.</div>';// est ce que le code postal correspond à l'expression régulière : la "regex" regular 
     }//  if (!isset($_POST['code_postal'])
 
+
+    
+    $_POST['nom'] = htmlspecialchars ($_POST['nom']);
+    $_POST['prenom'] = htmlspecialchars ($_POST['prenom']);
+    $_POST['email'] = htmlspecialchars ($_POST['email']);
+    $_POST['telephone'] = htmlspecialchars ($_POST['telephone']);
+    $_POST['mot_de_passe'] = md5( htmlspecialchars ( $_POST['mot_de_passe']))  ;
+    $_POST['adresse'] = htmlspecialchars ($_POST['adresse']);
+    $_POST['ville'] = htmlspecialchars ($_POST['ville']);
+    $_POST['code_postal'] = htmlspecialchars ($_POST['code_postal']);
     
 
 

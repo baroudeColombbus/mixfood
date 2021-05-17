@@ -9,8 +9,23 @@
 require_once'../inc/navbar.php' ; 
 require_once'../inc/init.php' ; 
 require_once'../inc/functions.php' ; 
+
+
+
 $message = '';
+
+$_POST['mot_de_passe'] = md5( htmlspecialchars ( $_POST['mot_de_passe']))   ;
+var_dump($_POST['mot_de_passe']);
+
 if(!empty($_POST)) {
+
+    
+
+
+var_dump($_POST['mot_de_passe']);
+
+
+
     if( !isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom']) ) {
     $message = '<div class="alert alert-danger">Le nom doit contenir entre 3 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
     }// fin if !isset($_POST['nom']
@@ -44,7 +59,9 @@ if(!empty($_POST)) {
     if (!isset($_POST['code_postal']) || !preg_match( '#^[0-9]{5}$#', $_POST['code_postal']) ) {
         $message .='<div class="alert alert-danger">le code postal n\'est pas valide.</div>';// est ce que le code postal correspond à l'expression régulière : la "regex" regular 
     }//  if (!isset($_POST['code_postal'])
-   
+
+    
+
 
     
 
@@ -89,7 +106,13 @@ if(!empty($_POST)) {
 
 
 ?>
- <?php echo "$message"; ?>
+ <?php echo "$message"; 
+ 
+
+
+
+ 
+ ?>
 
  <h1>Ajouter un administrateur</h1>
 

@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-10">
-                <p class="fw-light "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+                <p class="fw-light "> &copy;<?php echo date("Y"); ?><a href="#"> mixfood </a> tous droits réservés </p>
             </div>
 
         </div>

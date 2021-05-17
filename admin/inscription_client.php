@@ -8,8 +8,16 @@
 require_once'../inc/navbar.php' ; 
 require_once'../inc/init.php' ; 
 require_once'../inc/functions.php' ; 
-$message = "";
+
+
+
+
+
 if(!empty($_POST)) {
+
+
+  
+
     if( !isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom']) ) {
     $message = '<div class="alert alert-danger">Le nom doit contenir entre 3 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
     }// fin if !isset($_POST['nom']
@@ -30,6 +38,7 @@ if(!empty($_POST)) {
     if( !isset($_POST['mot_de_passe']) || strlen($_POST['mot_de_passe']) < 4 || strlen($_POST['mot_de_passe']) > 20 ) {
         $message = '<div class="alert alert-danger">Le mot depasse doit contenir entre 4 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
     }// fin if !isset($_POST['mot_de_passe']
+    
 
     if( !isset($_POST['adresse']) || strlen($_POST['adresse']) < 6 || strlen($_POST['adresse']) > 60 ) {
         $message = '<div class="alert alert-danger">L\' adresse est -elle complète ?.</div>'; // si indice adresse inf à 4 caractère ou sup à 20 caractère on affiche ce message
@@ -43,9 +52,20 @@ if(!empty($_POST)) {
     if (!isset($_POST['code_postal']) || !preg_match( '#^[0-9]{5}$#', $_POST['code_postal']) ) {
         $message .='<div class="alert alert-danger">le code postal n\'est pas valide.</div>';// est ce que le code postal correspond à l'expression régulière : la "regex" regular 
     }//  if (!isset($_POST['code_postal'])
-   
 
-    
+    $_POST['nom'] = htmlspecialchars ($_POST['nom']);
+    $_POST['prenom'] = htmlspecialchars ($_POST['prenom']);
+    $_POST['email'] = htmlspecialchars ($_POST['email']);
+    $_POST['telephone'] = htmlspecialchars ($_POST['telephone']);
+    $_POST['mot_de_passe'] = md5( htmlspecialchars ( $_POST['mot_de_passe']))  ;
+    $_POST['adresse'] = htmlspecialchars ($_POST['adresse']);
+    $_POST['ville'] = htmlspecialchars ($_POST['ville']);
+    $_POST['code_postal'] = htmlspecialchars ($_POST['code_postal']);
+
+
+
+ 
+   
 
     if (empty($message)) {// si la variable est vide, c'est que tu n'a pas d'erreur
         $utilisateur = executeRequete(" SELECT * FROM utilisateur WHERE email = :email OR telephone = :telephone" ,
@@ -76,10 +96,10 @@ if(!empty($_POST)) {
                                         
                                 ));
                                 //////////
-                                //          à finir 
+                                //          à finir la section
                                 //
                                 if ($succes) {
-                                    $_SESSION['client'] = $client; 
+                                    $_SESSION['client']; 
                                     $message .= '<div class="alert alert-success">Vous êtes inscrit <a href="#">Cliquez ici pour vous connecter</a></div>'; 
                                 } else {
                                     $message .= '<div class="alert alert-danger">Erreur lors de l`\enregistrement !</div>';

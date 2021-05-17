@@ -29,6 +29,7 @@
     include 'inc/diaporama.php';
     ?>
     <div>
+        <a href="contact.php">contact</a>
         <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore possimus numquam sunt illum officiis voluptatibus cupiditate eius facere, itaque laudantium debitis repudiandae perferendis. Quod accusantium quae est voluptates eligendi.</p>
     </div>
     <?php

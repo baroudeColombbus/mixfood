@@ -23,4 +23,19 @@ nav li:hover {
   width: 100%;
   max-height: 600px;
 }
+
+footer a:link {
+  color: red;
+}
+
+.produit-menu-img {
+  width: 20%;
+  float: left;
+}
+
+.img-curve {
+  border-radius: 3rem;
+}
+
+/* bootstrap  */
 /*# sourceMappingURL=style.css.map */

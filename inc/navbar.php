@@ -6,7 +6,7 @@
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse justify-content-center" id="navbar">
+        <div class="navbar-collapse collapse justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link m-4" href="#">Accueil</a>

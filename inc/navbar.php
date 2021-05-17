@@ -30,5 +30,4 @@
     <div class="container-fluid col-sm-12 col-lg-1">
         <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav">Se connecter</button>
     </div>
-
 </nav>

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="https://kit.fontawesome.com/b41dcf0f5f.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
@@ -23,12 +25,12 @@
     <title>MIXFOOD</title>
 </head>
 
-<body class="bg-dark">
+<body class="">
     <?php
     include 'inc/navbar.php';
     include 'inc/diaporama.php';
     ?>
-    <div>
+    <div class="container">
         <a href="contact.php">contact</a>
         <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore possimus numquam sunt illum officiis voluptatibus cupiditate eius facere, itaque laudantium debitis repudiandae perferendis. Quod accusantium quae est voluptates eligendi.</p>
     </div>

@@ -4,11 +4,18 @@
 
 	<?php
 
+
     require_once '../inc/navbar.php';
     require_once '../inc/init.php';
     require_once '../inc/functions.php';
 
+
+
+
+
     if (!empty($_POST)) {
+
+
 
 
         if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom'])) {
@@ -54,6 +61,9 @@
         $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
         $_POST['ville'] = htmlspecialchars($_POST['ville']);
         $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
+
+
+
 
 
 
@@ -112,16 +122,117 @@
 ?>
 
 <!-- container principal  -->
- <div class="container">
+ <div class="container py-3 ">
      <div class="row">
-         <div class="col bg-warning">
-             
+         <div class="col-sm-12 col-md-6 ">
+         <?php echo "$message"; ?>
+                <h1 class="pb-5">Inscrivez-vous</h1>
 
-         </div>
-         <div class="col bg-info">
+                <form method="POST" action="" class="row g-3  p-4 rounded-3 curve bg-info" id="formulaireInscription">
 
-         </div>
-     </div>
+                        <div class="col-6 col-md-6 etoile">
+                            <label for="prenom" class="form-label ">Prénom</label>
+                            <input type="text" name="prenom" class="form-control " id="prenom" required="required">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" name="nom" class="form-control " id="nom" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email
+                            </label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="telephone" class="form-label">Téléphone</label>
+                            <input type="text" name="telephone" class="form-control" id="telephone">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="mot_de_passe" class="form-label">Password</label>
+                            <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
+                        </div>
+                        <div class="col-12">
+                            <label for="adresse" class="form-label">Adresse</label>
+                            <input type="text" name="adresse" class="form-control" id="adresse" placeholder="Votre adresse">
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <label for="ville" class="form-label">Ville</label>
+                            <input type="text" name="ville" class="form-control" id="ville">
+                        </div>
+
+                        <div class="col-6 col-md-2">
+                            <label for="code_postal" class="form-label">Code postal</label>
+                            <input type="text" name="code_postal" class="form-control" id="code_postal">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
+
+                                <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
+                            
+                        </div>
+                        <div class="col-12">
+                        <p>
+                                Déja inscrit? <a href="#formulaireInscription">Sign in</a>
+                            </p>
+
+                        </div>
+
+                </form> <!-- fin form  -->
+
+        </div><!-- /fin col -->
+
+        <div class="col-sm-12 col-md-4 g-3 mx-auto">
+       
+            <?php echo "$message"; ?>
+                <h1 class="pb-5">Déja inscrit</h1>
+
+                <form method="POST" action="" class="row  p-4 rounded-3 curve bg-info" id="formulaireInscription">
+
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email
+                            </label>
+                            <input type="email" name="email" class="form-control" id="formulaireInscription">
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <label for="mot_de_passe" class="form-label">Password</label>
+                            <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
+
+                                <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
+                            
+                        </div>
+                
+
+                </form> <!-- fin form  -->
+
+         </div><!-- / fin col -->
+
+        </div><!-- row -->
+        
+     </div><!-- / fin container -->
 
 
  </div>

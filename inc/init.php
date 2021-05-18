@@ -10,7 +10,7 @@ session_start();
 
 ///////// 1- connexion a la base de données           ///////////
 
-define('SITEURL', 'http://localhost/mixfood/');
+define('SITEURL', 'http://localhost/mixfood/'); // la racine
 define('LOCALHOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');

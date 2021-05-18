@@ -104,23 +104,30 @@
 
     //var_dump($mot_de_passe);
 
+    
+// source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
 
-    // source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
 
 
+?>
 
-    ?>
+<!-- container principal  -->
+ <div class="container">
+     <div class="row">
+         <div class="col bg-warning">
+             
 
-	<!-- container principal  -->
-	<div class="container">
-	    <div class="row">
+         </div>
+         <div class="col bg-info">
 
-	    </div>
+         </div>
+     </div>
 
-	</div>
 
-	<?php
+ </div>
 
-    require_once '../inc/footer.php';
+<?php 
 
-    ?>
+require_once'../inc/footer.php' ; 
+
+?>

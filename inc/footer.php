@@ -38,10 +38,7 @@
             <div class="col-lg-10">
                 <p class="fw-light "> &copy;<?php echo date("Y"); ?><a href="#"> mixfood </a> tous droits réservés </p>
             </div>
-
         </div>
-
     </div>
-
 </footer>
 

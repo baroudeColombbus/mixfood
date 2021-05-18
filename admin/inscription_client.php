@@ -4,18 +4,11 @@
 
 	<?php
 
-
     require_once '../inc/navbar.php';
     require_once '../inc/init.php';
     require_once '../inc/functions.php';
 
-
-
-
-
     if (!empty($_POST)) {
-
-
 
 
         if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom'])) {
@@ -61,9 +54,6 @@
         $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
         $_POST['ville'] = htmlspecialchars($_POST['ville']);
         $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
-
-
-
 
 
 

@@ -6,7 +6,7 @@
             <div class="col-lg-3 d-none d-md-block d-lg-block">
                 <div class="row">
                     <div class="col">
-                        <h6><img src="../img/mixfoodNoir.png" alt="logo-mixfoo" class="img-fluid  mixfooter align-center pt-5" width="40%" height="40%"></h6>
+                        <h6><img src="img/mixfoodNoir.png" alt="logo-mixfoo" class="img-fluid  mixfooter align-center pt-5" width="40%" height="40%"></h6>
 
                     </div>
                 </div>
@@ -49,5 +49,5 @@
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-<script src="../js/jquery-3.6.0.min.js"></script>
-<script src="../js/script.js"></script>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/script.js"></script>

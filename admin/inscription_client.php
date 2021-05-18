@@ -123,7 +123,89 @@
 
 <!-- container principal  -->
  <div class="container">
-     <div class="row">
+     <div class="row c">
+         <div class="col-col-6">
+                 <?php echo "$message"; ?>
+                <h1>Inscription client</h1>
+
+                <form method="POST" action="" class="row g-3" id="formulaireInscription">
+
+                        <div class="col-6 col-md-6 etoile">
+                            <label for="prenom" class="form-label ">Prénom</label>
+                            <input type="text" name="prenom" class="form-control " id="prenom" required="required">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" name="nom" class="form-control " id="nom" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email
+                            </label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="telephone" class="form-label">Téléphone</label>
+                            <input type="text" name="telephone" class="form-control" id="telephone">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <label for="mot_de_passe" class="form-label">Password</label>
+                            <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
+                        </div>
+                        <div class="col-12">
+                            <label for="adresse" class="form-label">Adresse</label>
+                            <input type="text" name="adresse" class="form-control" id="adresse" placeholder="Votre adresse">
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <label for="ville" class="form-label">Ville</label>
+                            <input type="text" name="ville" class="form-control" id="ville">
+                        </div>
+
+                        <div class="col-6 col-md-2">
+                            <label for="code_postal" class="form-label">Code postal</label>
+                            <input type="text" name="code_postal" class="form-control" id="code_postal">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
+
+                                <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
+                            
+                        </div>
+                        <div class="col-12">
+                        <p>
+                                Déja inscrit? <a href="login.php">Sign in</a>
+                            </p>
+
+                        </div>
+
+                </form> <!-- fin form  -->
+
+        </div>
+
+         <div class="col-col-6">
+             <form action="post">
+                 
+             <div class="col-6 col-md-6 etoile">
+                <label for="email" class="form-label ">Email</label>
+                <input type="text" name="mail" class="form-control " id="emailLogin" required="required">
+            </div>
+            <div class="col-6 col-md-6">
+                <label for="mot_de_passe" class="form-label">Password</label>
+                <input type="password" name="mot_de_passe" class="form-control" id="mdpLogin">
+            </div>
+
+
+             </form>
+         </div>
          
      </div>
 

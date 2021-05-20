@@ -12,7 +12,7 @@ $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 		<h2 class="mb-4">Nos utilisateurs:</h2>
 
 		<?php
-		$requete = $pdoMIXFOOD->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
+		$requete = $pdoSITE->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
 
 		<table class="table table-light table-striped">
 			<thead>

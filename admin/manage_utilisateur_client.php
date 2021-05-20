@@ -1,12 +1,13 @@
 <?php
 
 require_once '../inc/init.php';
-require_once '../inc/navbar.php';
 require_once '../inc/functions.php';
+require_once '../inc/haut.php';
 
 $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 ?>
 
+<div class="container m-auto">
 <div class="row my-5">
 	<div class="col-sm-12 col-md-10">
 		<h2 class="mb-4">Nos utilisateurs:</h2>
@@ -58,4 +59,8 @@ $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 		</table>
 
 	</div><!-- fin col -->
+</div><!-- fin row -->
+
 </div>
+
+<?php require_once '../inc/bas.php' ?>

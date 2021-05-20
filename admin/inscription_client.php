@@ -194,7 +194,7 @@
         <div class="col-sm-12 col-md-4 g-3 mx-auto">
        
             <?php echo "$message"; ?>
-                <h1 class="pb-5">Déja inscrit</h1>
+                <h1 class="pb-3">Déja inscrit</h1>
 
                 <form method="POST" action="" class="row  p-4 rounded-3 curve bg-info" id="formulaireInscription">
 

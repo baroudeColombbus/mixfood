@@ -1,5 +1,5 @@
 // variable de couleurs
-$rouge: red;
+$rouge: rgb(204, 22, 22);
 $blanc: #fff;
 $vertF: #043227;
 $noir: #000;
@@ -15,8 +15,7 @@ p {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif; 
     background-color: $rouge;
 }
 

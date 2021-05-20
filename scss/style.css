@@ -3,9 +3,8 @@ p {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5em;
-  background-color: red;
+  font-family: 'Roboto', sans-serif;
+  background-color: #cc1616;
 }
 
 nav a {
@@ -22,7 +21,7 @@ nav li:hover {
 }
 
 footer a:link {
-  color: red;
+  color: #cc1616;
 }
 
 .produit-menu-img {

@@ -20,7 +20,8 @@
 
     <!-- Les typographies -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <title>MIXFOOD</title>
 </head>
@@ -30,10 +31,22 @@
     require_once 'inc/navbar.php';
     include 'inc/diaporama.php';
     ?>
-    <div class="container">
-        <a href="contact.php">contact</a>
-        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat inventore possimus numquam sunt illum officiis voluptatibus cupiditate eius facere, itaque laudantium debitis repudiandae perferendis. Quod accusantium quae est voluptates eligendi.</p>
-    </div>
+    <!-- /container principal -->
+    <div class="container m-auto">
+        <h2 class="text-center col">Votre choix</h2>
+
+        <div class="row  text-center my-5">
+            <div class="col-lg-6">
+                <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail"></a>
+            </div>
+            <div class="col-lg-6">
+                <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail"></a>
+            </div>
+
+
+        </div>
+
+    </div><!-- /fin container principal -->
     <?php
     include 'inc/footer.php';
     ?>

@@ -37,12 +37,11 @@
 
         <div class="row  text-center mb-5">
             <div class="col-lg-6 mt-3">
-                <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail"></a>
+                <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail img-responsive"></a>
             </div>
             <div class="col-lg-6 mt-3">
-                <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail"></a>
+                <a href="#"> <img src="img/sushi6.jpg" alt="Sushi" class="img-curvy img-thumbnail img-responsive"></a>
             </div>
-
 
         </div>
 

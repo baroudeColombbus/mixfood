@@ -8,12 +8,12 @@
         <div class="navbar-collapse collapse justify-content-end" id="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link m-4" href="">Accueil</a>
+                    <a class="nav-link m-4" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                     <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Pizza</a></li>
+                        <li><a class="dropdown-item" href="pizza.html">Pizza</a></li>
                         <li><a class="dropdown-item" href="#">Sushi</a></li>
                     </ul>
                 </li>

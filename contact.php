@@ -23,10 +23,11 @@
 </head>
 
 <body class="bg-dark">
+    <?php
+    include 'inc/navbar.php';
+    ?>
     <div class="container">
-        <?php
-        include 'inc/navbar.php';
-        ?>
+
         <div class="container m-5 p-4">
             <h3 class="text-center">Contact</h3>
             <p class="text-center"><em>We love our fans!</em></p>

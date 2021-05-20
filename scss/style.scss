@@ -10,6 +10,9 @@ $border-radius-sm:            .2rem;
 $border-radius-lg:            .3rem;
 $border-radius-pill:          50rem;
 
+// font size pour les font awesome 
+$font_awesome: 3rem;
+
 p {
     color: $blanc;
 }
@@ -51,6 +54,12 @@ footer .icon-fb {
 
 .curve{
     border-radius: $img_border_radius;
+}
+
+.fas .fa-plus-circle{
+
+    font-size: $font_awesome;
+
 }
 
 

@@ -6,7 +6,7 @@ require_once '../inc/haut.php';
 
 $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 ?>
-
+<!--  -->
 <div class="container m-auto">
 	<div class="row my-5">
 		<div class="col-sm-12 col-md-10">
@@ -15,7 +15,7 @@ $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 			<?php
 			$requete = $pdoSITE->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
 
-			<table class="table table-light table-striped">
+			<table class="table table-light table-striped ">
 				<thead>
 					<tr>
 						<th scope="col">ID</th>

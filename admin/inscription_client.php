@@ -1,22 +1,11 @@
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/b41dcf0f5f.js" crossorigin="anonymous"></script>
+<?php
 
-	<?php
-
-
-    require_once '../inc/navbar.php';
-    require_once '../inc/init.php';
-    require_once '../inc/functions.php';
-
-
-
-
-
+////
+///
+//       TRAITEMENT DU FORMULAIRE D'INSCRIPTION
+    // on initialise la variable message
+    $message = " "; 
     if (!empty($_POST)) {
-
-
-
 
         if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom'])) {
             $message = '<div class="alert alert-danger">Le nom doit contenir entre 3 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
@@ -53,6 +42,11 @@
             $message .= '<div class="alert alert-danger">le code postal n\'est pas valide.</div>'; // est ce que le code postal correspond à l'expression régulière : la "regex" regular 
         } //  if (!isset($_POST['code_postal'])
 
+
+        // ON UTILISE htmlspecialchars
+        // pour NETTOYER LES DONNEES INSERER PAR L UTILISATEUR
+        // ET PREMENUIRE LES INJECTIONS SQL
+
         $_POST['nom'] = htmlspecialchars($_POST['nom']);
         $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
         $_POST['email'] = htmlspecialchars($_POST['email']);
@@ -61,11 +55,6 @@
         $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
         $_POST['ville'] = htmlspecialchars($_POST['ville']);
         $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
-
-
-
-
-
 
         if (empty($message)) { // si la variable est vide, c'est que tu n'a pas d'erreur
             $utilisateur = executeRequete(
@@ -118,17 +107,19 @@
 // source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
 
 
-
+require_once '../inc/haut.php';
 ?>
 
 <!-- container principal  -->
  <div class="container py-3 ">
-     <div class="row">
-     <h1 class="pb-5">Inscrivez-vous</h1>
-         <div class="col-sm-12 col-md-6 curve ">
+     <!-- row -->
+    <div class="row">
+     
+        <div class="col-sm-12 col-md-6 ">
          <?php echo "$message"; ?>
-                
-                <form method="POST" action="" class="row g-3  p-4  bg-info" id="formulaireInscription">
+            
+         <h2 class="mb-5">Inscrivez-vous</h2>
+                <form method="POST" action="" class="row g-3  p-4 rounded-3 curve bg-info" id="formulaireInscription">
 
                         <div class="col-6 col-md-6 etoile">
                             <label for="prenom" class="form-label ">Prénom</label>
@@ -190,11 +181,12 @@
                 </form> <!-- fin form  -->
 
         </div><!-- /fin col -->
-
+        
+        <!-- FORMULAIRE DE CONNECTION -->
         <div class="col-sm-12 col-md-4 g-3 mx-auto">
        
             <?php echo "$message"; ?>
-                <h1 class="pb-3">Déja inscrit</h1>
+                <h2 class="mb-3">Déja inscrit</h2>
 
                 <form method="POST" action="" class="row  p-4 rounded-3 curve bg-info" id="formulaireInscription">
 
@@ -230,15 +222,14 @@
 
          </div><!-- / fin col -->
 
-        </div><!-- row -->
+    </div><!-- row -->
         
-     </div><!-- / fin container -->
 
 
- </div>
+ </div><!-- / fin container -->
 
 <?php 
+require_once '../inc/bas.php';
 
-require_once'../inc/footer.php' ; 
 
 ?>

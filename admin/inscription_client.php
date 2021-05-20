@@ -181,7 +181,8 @@ require_once '../inc/haut.php';
                 </form> <!-- fin form  -->
 
         </div><!-- /fin col -->
-
+        
+        <!-- FORMULAIRE DE CONNECTION -->
         <div class="col-sm-12 col-md-4 g-3 mx-auto">
        
             <?php echo "$message"; ?>

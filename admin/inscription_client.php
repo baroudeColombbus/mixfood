@@ -124,11 +124,11 @@
 <!-- container principal  -->
  <div class="container py-3 ">
      <div class="row">
-         <div class="col-sm-12 col-md-6 ">
+     <h1 class="pb-5">Inscrivez-vous</h1>
+         <div class="col-sm-12 col-md-6 curve ">
          <?php echo "$message"; ?>
-                <h1 class="pb-5">Inscrivez-vous</h1>
-
-                <form method="POST" action="" class="row g-3  p-4 rounded-3 curve bg-info" id="formulaireInscription">
+                
+                <form method="POST" action="" class="row g-3  p-4  bg-info" id="formulaireInscription">
 
                         <div class="col-6 col-md-6 etoile">
                             <label for="prenom" class="form-label ">Prénom</label>

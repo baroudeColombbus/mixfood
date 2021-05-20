@@ -41,9 +41,13 @@ footer a:link {
     float: left;
   }
   
+
+  
 .img-curvy{
     border-radius: $img_border_radius;
 }
+
+/* rajoute la border radius de 3em sur les image */
 
 .curve{
     border-radius: $img_border_radius;

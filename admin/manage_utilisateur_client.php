@@ -1,12 +1,9 @@
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-	<script src="https://kit.fontawesome.com/b41dcf0f5f.js" crossorigin="anonymous"></script>
-
-	<?php
-
-  require_once '../inc/navbar.php';
+<?php
   require_once '../inc/init.php';
   require_once '../inc/functions.php';
+  require_once '../inc/haut.php';
+
+ 
 
   $utilisateur = executeRequete(" SELECT * FROM utilisateur");
   ?>
@@ -18,7 +15,7 @@
 	    <?php
 
 
-      $requete = $pdoMIXFOOD->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
+      $requete = $pdoSITE->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
 
 	    <table class="table table-light table-striped">
 	      <thead>
@@ -64,3 +61,6 @@
 	    </table>
 
 	  </div><!-- fin col -->
+
+
+	  <?php require_once '../inc/init.php'; '' ?>

@@ -1,7 +1,7 @@
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
     <div class="container">
-        <img src="img/mixfoodNoir.png" alt="logo-mixfodd" width="8%" height="8%" class="mt-3 img-responsive">
+        <img src="img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +26,8 @@
             </ul>
         </div>
     </div>
-    <div class="container-fluid col-sm-12 col-lg-1">
-        <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav">Se connecter</button>
+    <div class="container-fluid col-sm-12 col-lg-2">
+        <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
+        <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav" id="btn-connexion">Se connecter</button>
     </div>
 </nav>

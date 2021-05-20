@@ -6,7 +6,7 @@
             <div class="col-lg-3 d-none d-md-block d-lg-block">
                 <div class="row">
                     <div class="col">
-                        <h6><img src="img/mixfoodNoir.png" alt="logo-mixfoo" class="img-fluid  mixfooter align-center pt-5" width="40%" height="40%"></h6>
+                        <h6><img src="img/mixfoodNoir.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="40%" height="40%"></h6>
 
                     </div>
                 </div>
@@ -41,4 +41,3 @@
         </div>
     </div>
 </footer>
-

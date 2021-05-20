@@ -33,9 +33,9 @@
     ?>
     <!-- /container principal -->
     <div class="container m-auto">
-        <h2 class="text-center col">Votre choix</h2>
+        <h2 class="text-center mt-4 text-light">Votre choix</h2>
 
-        <div class="row  text-center my-5">
+        <div class="row  text-center mb-5">
             <div class="col-lg-6 mt-3">
                 <a href="#"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail"></a>
             </div>

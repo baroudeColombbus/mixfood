@@ -2,18 +2,17 @@
 
 require_once '../inc/init.php';
 require_once '../inc/functions.php';
-require_once '../inc/haut.php';
+require_once 'inc/haut.php';
 
-if(!empty($_POST)) {
+if (!empty($_POST)) {
     //On verify que le formulaire a bien été envoyer
     $nom_categorie =  htmlspecialchars($_POST['nom_categorie']);
 
-// On verify le button radio selectionner
+    // On verify le button radio selectionner
     if (isset($_POST['en_vedette'])) {
         $en_vedette =  htmlspecialchars($_POST['en_vedette']);
     } else {
         $en_vedette = "non";
-
     }
 
     // on verifie si le nom_categorie va être en disponible ou bon
@@ -21,20 +20,19 @@ if(!empty($_POST)) {
         $disponible =  htmlspecialchars($_POST['disponible']);
     } else {
         $disponible = "non";
-
     }
 
     // TRAITEMENT DES IMAGES
     // On verifie si les images sont cselectionner
-     //print_r($_FILES['nom_image']['name']);
+    //print_r($_FILES['nom_image']['name']);
     //die();
-   
+
     // var_dump( $nom_image);
-     //die();
+    //die();
 
 
 
-     if (isset($_FILES['nom_image']['name'])) {
+    if (isset($_FILES['nom_image']['name'])) {
 
         $nom_image = htmlspecialchars($_FILES['nom_image']['name']); //nom_image
 
@@ -48,7 +46,7 @@ if(!empty($_POST)) {
 
         $source_path = $_FILES['nom_image']['tmp_name']; // source path (source du fichier)
         //var_dump($source_path);
-        $destination_path = "../img/categorie/" .$nom_image; // destination path (destination du fichier)
+        $destination_path = "../img/categorie/" . $nom_image; // destination path (destination du fichier)
 
         // Now we can Upload the file( on televerse cette image de la source at le destination)
         $upload = move_uploaded_file($source_path, $destination_path);
@@ -61,9 +59,7 @@ if(!empty($_POST)) {
             // STOP 
             die();
         }
- 
-    }
-        else {
+    } else {
 
         $nom_image = "";
     }
@@ -89,12 +85,6 @@ if(!empty($_POST)) {
         header('location:' . SITEURL . 'admin/ajouter_categorie.php');
         exit;
     }
-
-
-
-
-
-
 }
 
 
@@ -157,4 +147,4 @@ if(!empty($_POST)) {
 </div> <!-- fin de container-->
 
 
-<?php require_once '../inc/bas.php' ?>
+<?php require_once 'inc/bas.php' ?>

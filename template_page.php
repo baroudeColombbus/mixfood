@@ -1,8 +1,8 @@
 <?php
 
-require_once '../inc/init.php';
-require_once '../inc/functions.php';
-require_once '../inc/haut.php';
+require_once 'inc/init.php';
+require_once 'inc/functions.php';
+require_once 'inc/haut.php';
 
 
 ?>
@@ -12,4 +12,4 @@ require_once '../inc/haut.php';
 </div>
 
 
-<?php require_once '../inc/bas.php' ?>
+<?php require_once 'inc/bas.php' ?>

@@ -2,12 +2,13 @@
 include 'inc/init.php';
 
 $message = '';
+$contenu = '';
 
 // jeprint_r($_GET);
-if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
-    unset($_SESSION['utlisateur']);
-    $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
-}
+// if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
+//     unset($_SESSION['utlisateur']);
+//     $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
+// }
 
 // 3- Vérification si membre est déjà connecté : 
 if (estConnecte()) {
@@ -16,7 +17,7 @@ if (estConnecte()) {
 }
 
 // 1- Traitement du formulaire de connexion
-// jeprint_r($_POST);
+jeprint_r($_POST);
 if (!empty($_POST)) {
     if (empty($_POST['email']) || empty($_POST['mdp'])) {
         $contenu .= '<div class="alert alert-danger">Veuillez entrer vos informations</div>';
@@ -26,7 +27,7 @@ if (!empty($_POST)) {
         if ($resultat->rowCount() == 1) {
             $utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
             if (password_verify($_POST['mdp'], $utilisateur['mdp'])) {
-                $_SESSION['membre'] = $utilisateur;
+                $_SESSION['utilisateur'] = $utilisateur;
                 // header('location:profil_client.php');
                 exit();
             } else {
@@ -39,7 +40,7 @@ if (!empty($_POST)) {
 } /*if !empty($_POST)*/
 // require_once 'inc/header.php';
 echo $message; //pour afficher le message lors de la connexion
-echo $contenu; //pour affciher les autres messages
+echo $contenu; //pour afficher les autres messages
 
 
 require_once 'inc/haut.php';

@@ -2,7 +2,7 @@
 
 require_once '../inc/init.php';
 require_once '../inc/functions.php';
-require_once '../inc/haut.php';
+require_once 'inc/haut.php';
 
 if(!empty($_POST)) {
     //On verify que le formulaire a bien été envoyer
@@ -50,11 +50,11 @@ if(!empty($_POST)) {
         $file_extension = end($tmp);
 
         // renomme les images
-        $produit_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
+        $produit_image = "Produit_mixfood" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
 
         $source_path = $_FILES['produit_image']['tmp_name']; // source path (source du fichier)
         //var_dump($source_path);
-        $destination_path = "../img/categorie/" .$produit_image; // destination path (destination du fichier)
+        $destination_path = "../img/produit/" .$produit_image; // destination path (destination du fichier)
 
         // Now we can Upload the file( on televerse cette image de la source at le destination)
         $upload = move_uploaded_file($source_path, $destination_path);
@@ -80,7 +80,7 @@ if(!empty($_POST)) {
 
     // On execute la requête
     $requete = $sql->execute();
-    var_dump($requete);
+    //var_dump($requete);
 
     if ($requete  == TRUE) {
         // cQuery executed correctly and data added to the database
@@ -173,4 +173,4 @@ if(!empty($_POST)) {
 </div> <!-- fin de container-->
 
 
-<?php require_once '../inc/bas.php' ?>
+<?php require_once 'inc/bas.php';?>

@@ -10,7 +10,7 @@ require_once 'inc/haut.php';
 
       <!-- button to ad admin  -->
       <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class="btn btn-primary my-2">Ajouter une categorie</a>
-<!--  -->
+
 <table class="table table-striped mx-auto">
     <thead class="table-dark">
         <tr>

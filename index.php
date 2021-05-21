@@ -41,7 +41,7 @@
                 <a href="pizza.html"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail img-responsive"></a>
             </div>
             <div class="col-lg-6 mt-3">
-                <a href="sushi.html"> <img src="img/sushi6.jpg" alt="Sushi" class="img-curvy img-thumbnail img-responsive"></a>
+                <a href="sushi.html"> <img src="img/sushi9.jpg" alt="Sushi" class="img-curvy img-thumbnail img-responsive" width="65%" height="65%"></a>
             </div>
 
         </div>
@@ -49,5 +49,5 @@
     </div><!-- /fin container principal -->
 
     <?php
-    include 'inc/bas.php';
+    include 'inc/bas2.php';
     ?>

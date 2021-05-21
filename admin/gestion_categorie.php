@@ -82,7 +82,7 @@ require_once '../inc/haut.php';
             echo "<td>" . $row['en_vedette'] . "</td>";
             echo "<td>" . $row['disponible'] . "</td>";
             echo "<td> <a href=\"update_category.php?id=" . $row['id_categorie'] . "\" class=\"btn btn-warning \">Modifier la gategorie</a></td>";
-            echo "<td> <a href=\"delete_category.php?id=" . $row['id_categorie'] . "\" class=\"btn btn-info \">Supprimer la gategorie</a></td>";
+            echo "<td> <a href=\"supprimer_.php?id=" . $row['id_categorie'] . "\" class=\"btn btn-info \">Supprimer la gategorie</a></td>";
             echo    "<tr>";
         }
         ?>

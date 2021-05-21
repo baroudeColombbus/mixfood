@@ -13,10 +13,10 @@
     <script src="https://kit.fontawesome.com/b41dcf0f5f.js" crossorigin="anonymous"></script>
 
     <!-- normalize -->
-    <link rel="stylesheet" href="../scss/normalize.css">
+    <link rel="stylesheet" href="scss/normalize.css">
 
     <!-- Les styles -->
-    <link rel="stylesheet" href="../scss/style.css">
+    <link rel="stylesheet" href="scss/style.css">
 
     <!-- Les typographies -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,7 +32,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
         <div class="container">
-            <img src="../img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
+            <img src="img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,10 +68,10 @@
         </div>
         <div class="container-fluid col-sm-12 col-lg-2">
 
-            <a href="inscription_client2.php">
+            <a href="admin/inscription_client2.php">
                 <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
             </a>
-            <a href="connexion_client.php" class="mx-auto">
+            <a href="admin/connexion_client.php" class="mx-auto">
                 <button class="btn btn-warning mx-auto mb-1 mx-auto boutonNav" id="btn-connexion" style="width:150%;">Se connecter</button>
             </a>
 

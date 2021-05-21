@@ -3,7 +3,7 @@
 <!-- Footer -->
 <footer class="text-center text-lg-start text-white container-fluid bg-warning">
     <!-- Grid container -->
-    <div class="container-fluid p-4 pb-0">
+    <div class="container-fluid pt-3">
         <!-- Section: Links -->
         <section class="">
             <!--Grid row-->
@@ -45,9 +45,12 @@
                     <p>
                         <a class="text-white">Menu</a>
                     </p>
-                    <p>
-                        <a class="text-white">Services</a>
-                    </p>
+                    <div class="bbb-wrapper fl-wrap">
+                        <div class="subcribe-form fl-wrap">
+                            <p class="">Newletter </p>
+                            <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-rss"></i> GO</button> <label for="subscribe-email" class="subscribe-message"></label> </form>
+                        </div>
+                    </div>
                 </div>
                 <!-- Grid column -->
 

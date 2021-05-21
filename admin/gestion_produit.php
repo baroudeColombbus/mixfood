@@ -70,4 +70,4 @@ require_once '../inc/haut.php';
 </div> <!-- fin de container-->
 
 
-<?php require_once '../inc/bas.php' ?>
+<?php require_once '../inc/bas2.php' ?>

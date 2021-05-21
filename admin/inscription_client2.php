@@ -5,6 +5,7 @@
 //       TRAITEMENT DU FORMULAIRE D'INSCRIPTION
 // on initialise la variable message
 $message = " ";
+
 if (!empty($_POST)) {
 
     if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom'])) {
@@ -45,7 +46,7 @@ if (!empty($_POST)) {
 
     // ON UTILISE htmlspecialchars
     // pour NETTOYER LES DONNEES INSERER PAR L UTILISATEUR
-    // ET PREMUIRE LES INJECTIONS SQL
+    // ET PREMUIRE DES INJECTIONS SQL
 
     $_POST['nom'] = htmlspecialchars($_POST['nom']);
     $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
@@ -70,7 +71,7 @@ if (!empty($_POST)) {
 
         if ($utilisateur->rowCount() > 0) { // si la requête retourne des lignes c'est que l'adresse mail existe déjà
             $message .= '<div class="alert alert-danger">Adresse email / téléphone déja utilisé. <a href=\"#\">Connectez-vous entant client</a></div>';
-        } else { // si on inscirt le utilisateur en BDD
+        } else { // si on inscrit le utilisateur en BDD
             $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // cette fonction prédéfinie permet de cripter le mot de passe selon l'algorithme actuel "bcrypt".  Il faudra lors de la connexion comparer le hash de la BDD avec celui du mot_de_passe de l'intérieur
             // ici on insert les données dans la bdd 
             $succes = executeRequete(
@@ -104,22 +105,19 @@ if (!empty($_POST)) {
 //var_dump($mot_de_passe);
 
 
-// source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
-
-
-require_once '../inc/haut.php';
+require_once 'inc/haut.php';
 ?>
 
 <!-- container principal  -->
-<div class="container py-3 ">
+<div class="container py-3 mb-5 mt-3">
     <!-- row -->
     <div class="row">
 
-        <div class="col-sm-12 col-md-6 ">
+        <div class="col-sm-12 col-md-6 mx-auto ">
             <?php echo "$message"; ?>
 
-            <h2 class="mb-5">Inscrivez-vous</h2>
-            <form method="POST" action="" class="row g-3  p-4 rounded-3 curve bg-info" id="formulaireInscription">
+            <h2 class="mb-5 mt-3 text-center alert alert-light">Inscrivez-vous</h2>
+            <form method="POST" action="" class="row g-3 p-4 rounded-3 curve bg-light" id="formulaireInscription">
 
                 <div class="col-6 col-md-6 etoile">
                     <label for="prenom" class="form-label ">Prénom</label>
@@ -153,7 +151,7 @@ require_once '../inc/haut.php';
                     <input type="text" name="ville" class="form-control" id="ville">
                 </div>
 
-                <div class="col-6 col-md-2">
+                <div class="col-6 col-md-3">
                     <label for="code_postal" class="form-label">Code postal</label>
                     <input type="text" name="code_postal" class="form-control" id="code_postal">
                 </div>
@@ -161,19 +159,18 @@ require_once '../inc/haut.php';
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
                         <label class="form-check-label" for="gridCheck">
-                            Check me out
+                            Se souvenir de moi
                         </label>
                     </div>
                 </div>
+
                 <div class="d-grid gap-2">
-                    <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
-
-                    <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
-
+                    <button class="btn btn-dark" type="submit" name="register_btn">Valider</button>
                 </div>
+
                 <div class="col-12">
-                    <p>
-                        Déja inscrit? <a href="#formulaireInscription">Sign in</a>
+                    <p style="color:black;">
+                        Déja inscrit? <a href="connexion_client.php">Connectez-vous</a>
                     </p>
 
                 </div>
@@ -182,14 +179,12 @@ require_once '../inc/haut.php';
 
         </div><!-- /fin col -->
 
-        <!-- FORMULAIRE DE CONNECTION -->
-        <div class="col-sm-12 col-md-4 g-3 mx-auto">
+        <!-- FORMULAIRE DE CONNEXION -->
+        <!-- <div class="col-sm-12 col-md-4 g-3 mx-auto my-auto">
 
-            <?php echo "$message"; ?>
-            <h2 class="mb-3">Déja inscrit</h2>
+            <h2 class="mb-5 mt-3 text-center alert alert-light">Déja inscrit</h2>
 
-            <form method="POST" action="" class="row  p-4 rounded-3 curve bg-info" id="formulaireInscription">
-
+            <form method="POST" action="" class="row g-3 p-4 rounded-3 curve bg-light" id="formulaireInscription">
 
                 <div class="col-12">
                     <label for="email" class="form-label">Email
@@ -198,7 +193,7 @@ require_once '../inc/haut.php';
                 </div>
 
                 <div class="col-6 col-md-6">
-                    <label for="mot_de_passe" class="form-label">Password</label>
+                    <label for="mot_de_passe" class="form-label">Mot de passe</label>
                     <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
                 </div>
 
@@ -206,30 +201,22 @@ require_once '../inc/haut.php';
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
                         <label class="form-check-label" for="gridCheck">
-                            Check me out
+                            Se souvenir de moi
                         </label>
                     </div>
                 </div>
                 <div class="d-grid gap-2">
-                    <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
-
-                    <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
-
+                    <button class="btn btn-dark" type="submit" name="register_btn">Valider</button>
                 </div>
 
+            </form> -->
 
-            </form> <!-- fin form  -->
-
-        </div><!-- / fin col -->
-
-    </div><!-- row -->
-
-
+    </div><!-- / fin row -->
 
 </div><!-- / fin container -->
 
 <?php
-require_once '../inc/bas.php';
+require_once 'inc/bas.php';
 
 
 ?>

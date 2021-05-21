@@ -54,5 +54,5 @@
         </div> <!-- fin de row-->
     </div> <!-- fin de container-->
     <?php
-    include 'inc/bas.php';
+    include 'inc/bas2.php';
     ?>

@@ -86,13 +86,13 @@ if(!empty($_POST)) {
         // cQuery executed correctly and data added to the database
         $_SESSION['add'] =  " <div class=\"alert alert-success row col-col-4\">Category Successfully Added</div>"; // create a new section called 'add'
 
-        header('location:' . SITEURL . 'admin/gestion_categorie.php');
+        header('location:' . SITEURL . 'admin/gestion_produit.php');
         exit;
     } else {
         //Failed to add category
         $_SESSION['add'] = "<div class=\"alert alert-success row col-col-4\">Category Failed to  Added</div>";
 
-        header('location:' . SITEURL . 'admin/ajouter_categorie.php');
+        header('location:' . SITEURL . 'admin/ajouter_produit.php');
         exit;
     }
 

@@ -5,67 +5,94 @@ require_once '../inc/functions.php';
 require_once 'inc/haut.php';
 
 ?>
-
+<!-- menu principal -->
 <div class="container m-auto">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 mx-auto p-4">
 
-            <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Entrée d'un nouveau produit</h2>
-                <!-- début de formulaire -->
-                <form method="POST" action="" class="">
+      <!-- button to ad admin  -->
+      <a href="<?php echo SITEURL; ?>admin/ajouter_categorie.php" class="btn btn-primary my-2">Ajouter une categorie</a>
 
-                    <div class="form-group mb-3">
-                        <label for="categorie"> Nom catégorie</label>
-                        <input type="text " class="form-control text-right" name="categorie" id="categorie">
-                    </div>
+<table class="table table-striped mx-auto">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Categorie</th>
+            <th>Image</th>
+            <th>en_vedette</th>
+            <th>Disponible</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
 
-                    <div class="form-group mb-3">
-                        <label for="nom_produit">Nom du produit</label>
-                        <input type="text " class="form-control text-right" name="nom_produit" id="nom_produit">
-                    </div>
 
-                    <div class="form-group mb-3">
-                        <label for="produit_ingredients">Ingrédients</label>
-                        <input type="text" class="form-control text-right" name="produit_ingredients" id="produit_ingredients">
-                    </div>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Query to get all Categories from database
+        $sql =  $pdoSITE->prepare("SELECT * FROM produit");
 
-                    <div class="form-group mb-3">
-                        <label for="produit_prix">Prix</label>
-                        <input type="text" class="form-control text-right" name="produit_prix" id="produit_prix">
-                    </div>
+        //execute the sql statement as an object NOT an array
 
-                    <div class="form-group mb-3">
-                        <label for="produit_vedette">Produit vedette </label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
-                            <label class="form-check-label" for="f">oui</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="non">
-                            <label class="form-check-label" for="m">non</label>
-                        </div>
-                    </div>
+        $sql->execute();
 
-                    <div class="form-group mb-3">
-                        <label for="produit_disponible">Disponibilité </label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="produit_disponible" id="produit_disponible" value="oui">
-                            <label class="form-check-label" for="f">oui</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="produit_disponible" id="produit_disponible" value="non">
-                            <label class="form-check-label" for="m">non</label>
-                        </div>
-                    </div>
+        // fetch all rows into array, by default PDO::FETCH_BOTH is used
+        $result =   $sql->fetchAll();
+        //var_dump($result);
 
-                    <button type="submit" class="btn btn-small btn-warning">AJOUTER</button>
+        // count the number of admin in the database
+        $nbr_produit =      $sql->rowCount();
 
-                </form> <!-- fin de formulaire -->
-            </div><!-- Fin de card -->
+        if ($nbr_produit > 0) {
+            // there are record in the database
 
-        </div><!-- Fin de col -->
-    </div><!-- Fin row -->
-</div> <!-- fin de container-->
+        } else {
+            // no record found in the database
+        }
+
+
+
+
+        foreach ($result as $row) {
+
+            $produit_image  = $row['produit_image'];
+
+            echo    "<tr>";
+
+            echo "<td>" . $row['id_produit'] . "</td>";
+            echo "<td>" . $row['id_categorie'] . "</td>";
+            echo "<td>" . $row['nom_produit'] . "</td>";
+            
+        ?>
+            <td>
+                <?php
+
+                if ($produit_image  != '') {
+                ?>
+                    <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $produit_image ; ?>" width="100px">
+
+
+                <?php
+
+                } else {
+                    echo  "<div class=\"alert alert-warning row col-col-4\">Image not Added</div>";
+                }
+
+                ?>
+            </td>
+        <?php
+            echo " <td>". $row['produit_ingredients'] . "</td>";
+            echo " <td>". $row['produit_prix'] . "</td>";
+            echo "<td>" . $row['produit_vedette'] . "</td>";
+            echo "<td>" . $row['produit_disponible'] . "</td>";
+            echo "<td> <a href=\"modifier_produit.php?id=" . $row['id_produit'] . "\" class=\"btn btn-warning \">Modifier le produit</a></td>";
+            echo "<td> <a href=\"supprimer_produit.php?id=" . $row['id_produit'] . "\" class=\"btn btn-info \">Supprimer le produit</a></td>";
+            echo    "<tr>";
+        }
+        ?>
+
+
+    </tbody>
+</table>
+
+</div>
 
 <?php require_once 'inc/bas.php' ?>

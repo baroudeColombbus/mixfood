@@ -49,5 +49,5 @@
     </div><!-- /fin container principal -->
 
     <?php
-    include 'inc/bas2.php';
+    include 'inc/bas.php';
     ?>

@@ -2,8 +2,7 @@
 
 require_once '../inc/init.php';
 require_once '../inc/functions.php';
-require_once '../inc/haut.php';
-
+require_once 'inc/haut.php';
 
 ?>
 
@@ -69,5 +68,4 @@ require_once '../inc/haut.php';
     </div><!-- Fin row -->
 </div> <!-- fin de container-->
 
-
-<?php require_once '../inc/bas2.php' ?>
+<?php require_once 'inc/bas.php' ?>

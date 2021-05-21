@@ -15,6 +15,7 @@ $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 			<?php
 			$requete = $pdoSITE->query(" SELECT * FROM utilisateur ORDER BY id_utilisateur DESC"); ?>
 
+			<div class="table table-responsive-sm">
 			<table class="table table-light table-striped ">
 				<thead>
 					<tr>
@@ -57,6 +58,7 @@ $utilisateur = executeRequete(" SELECT * FROM utilisateur");
 				}
 				?>
 			</table>
+			</div><!-- /fin div -->
 
 		</div><!-- fin col -->
 	</div><!-- fin row -->

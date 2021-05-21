@@ -9,25 +9,60 @@ require_once '../inc/haut.php';
 
 <div class="container m-auto">
     <div class="row">
-        <div class="col-sm-12 col-md-8 mx-auto p-4 text-center">
+        <div class="col-sm-12 col-md-6 mx-auto p-4">
 
-            <div class="card text-center m-auto alert alert-success border border-success">
-                <h1 class="p-3">Ajouter un produit </h1>
-                <ul class="list-group list-group-flush border border-success">
+            <div class="card m-auto alert alert-light border border-warning">
+                <h2 class="bg-warning p-4 text-center mb-5">Entrée d'un nouveau produit</h2>
+                <!-- début de formulaire -->
+                <form method="POST" action="" class="">
 
-                    <li class="list-group-item">
-                        <?php
-                        echo "Description : " . $fiche['description'];
-                        ?>
-                    </li>
-                    <li class="list-group-item">
-                        <?php
-                        echo "Prix : " . $fiche['prix'] . " €";
-                        echo "<li class=\"list-group-item\">Stock : " . $fiche['stock'] . "</li>";
-                        ?>
-                    </li>
-                </ul>
-                <button type="button" class="btn btn-warning border border-danger p-4">AJOUTER</button>
+                    <div class="form-group mb-3">
+                        <label for="categorie"> Nom catégorie</label>
+                        <input type="text " class="form-control text-right" name="categorie" id="categorie">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="nom_produit">Nom du produit</label>
+                        <input type="text " class="form-control text-right" name="nom_produit" id="nom_produit">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="produit_ingredients">Ingrédients</label>
+                        <input type="text" class="form-control text-right" name="produit_ingredients" id="produit_ingredients">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="produit_prix">Prix</label>
+                        <input type="text" class="form-control text-right" name="produit_prix" id="produit_prix">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="produit_vedette">Produit vedette </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
+                            <label class="form-check-label" for="f">oui</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="non">
+                            <label class="form-check-label" for="m">non</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="produit_disponible">Disponibilité </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="produit_disponible" id="produit_disponible" value="oui">
+                            <label class="form-check-label" for="f">oui</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="produit_disponible" id="produit_disponible" value="non">
+                            <label class="form-check-label" for="m">non</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-small btn-warning">AJOUTER</button>
+
+                </form> <!-- fin de formulaire -->
             </div><!-- Fin de card -->
 
         </div><!-- Fin de col -->

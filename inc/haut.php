@@ -44,8 +44,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                         <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Pizza</a></li>
-                            <li><a class="dropdown-item" href="#">Sushi</a></li>
+                            <li><a class="dropdown-item" href="../pizza.html">Pizza</a></li>
+                            <li><a class="dropdown-item" href="../sushi.html">Sushi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

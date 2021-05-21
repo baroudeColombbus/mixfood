@@ -23,6 +23,15 @@
                 <li class="nav-item">
                     <a class="nav-link m-4" href="contact.php">Contact</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN</a>
+                    <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Gestion</a></li>
+                        <li><a class="dropdown-item" href="#">Produits</a></li>
+                        <li><a class="dropdown-item" href="#">Commandes</a></li>
+
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

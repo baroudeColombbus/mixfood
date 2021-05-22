@@ -1,7 +1,7 @@
 <?php
 
-require_once '../inc/init.php';
-require_once '../inc/functions.php';
+require_once 'inc/init.php';
+require_once 'inc/functions.php';
 require_once 'inc/haut.php';
 
 $utilisateur = executeRequete(" SELECT * FROM utilisateur");

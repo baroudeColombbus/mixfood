@@ -1,10 +1,10 @@
 <?php
 
-require_once '../inc/init.php';
-require_once '../inc/functions.php';
-require_once 'inc/haut.php';
+require_once 'inc/init.php';
+require_once 'inc/functions.php';
 
-if(!empty($_POST)) {
+
+if (!empty($_POST)) {
     //On verify que le formulaire a bien été envoyer
     // on nettoie le formulaire en utilisant htmlspecialchars
 
@@ -12,14 +12,13 @@ if(!empty($_POST)) {
 
     $produit_prix = htmlspecialchars($_POST['produit_prix']);
 
- 	$produit_ingredients = htmlspecialchars($_POST['produit_ingredients']);
+    $produit_ingredients = htmlspecialchars($_POST['produit_ingredients']);
 
-// On verify le button radio selectionner
+    // On verify le button radio selectionner
     if (isset($_POST['produit_vedette'])) {
         $produit_vedette =  htmlspecialchars($_POST['produit_vedette']);
     } else {
         $produit_vedette = "non";
-
     }
 
     // on verifie si le  	nom_produit va être en produit_disponible  ou bon
@@ -27,20 +26,19 @@ if(!empty($_POST)) {
         $produit_disponible  =  htmlspecialchars($_POST['produit_disponible ']);
     } else {
         $produit_disponible  = "non";
-
     }
 
     // TRAITEMENT DES IMAGES
     // On verifie si les images sont cselectionner
-     //print_r($_FILES['produit_image']['name']);
+    //print_r($_FILES['produit_image']['name']);
     //die();
-   
+
     // var_dump( $produit_image);
-     //die();
+    //die();
 
 
 
-     if (isset($_FILES['produit_image']['name'])) {
+    if (isset($_FILES['produit_image']['name'])) {
 
         $produit_image = htmlspecialchars($_FILES['produit_image']['name']); //produit_image
 
@@ -54,7 +52,7 @@ if(!empty($_POST)) {
 
         $source_path = $_FILES['produit_image']['tmp_name']; // source path (source du fichier)
         //var_dump($source_path);
-        $destination_path = "../img/produit/" .$produit_image; // destination path (destination du fichier)
+        $destination_path = "../img/produit/" . $produit_image; // destination path (destination du fichier)
 
         // Now we can Upload the file( on televerse cette image de la source at le destination)
         $upload = move_uploaded_file($source_path, $destination_path);
@@ -67,9 +65,7 @@ if(!empty($_POST)) {
             // STOP 
             die();
         }
- 
-    }
-        else {
+    } else {
 
         $produit_image = "";
     }
@@ -95,15 +91,9 @@ if(!empty($_POST)) {
         header('location:' . SITEURL . 'admin/ajouter_produit.php');
         exit;
     }
-
-
-
-
-
-
 }
 
-
+require_once 'inc/haut.php';
 ?>
 
 <div class="container m-auto">
@@ -132,13 +122,13 @@ if(!empty($_POST)) {
                     </div>
 
                     <div class="form-group mb-3">
-                    <label for="produit_ingredients" class="form-label">Ingrédients</label>
-                        <textarea class="form-control text-right"  name="produit_ingredients" id="produit_ingredients" rows="3"></textarea>
+                        <label for="produit_ingredients" class="form-label">Ingrédients</label>
+                        <textarea class="form-control text-right" name="produit_ingredients" id="produit_ingredients" rows="3"></textarea>
                     </div>
 
 
                     <div class="form-group mb-3">
-                        <label for="produit_vedette">produit vedette  </label>
+                        <label for="produit_vedette">produit vedette </label>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="produit_vedette" id="produit_vedette" value="oui">
                             <label class="form-check-label" for="f">oui</label>
@@ -173,4 +163,4 @@ if(!empty($_POST)) {
 </div> <!-- fin de container-->
 
 
-<?php require_once 'inc/bas.php';?>
+<?php require_once 'inc/bas.php'; ?>

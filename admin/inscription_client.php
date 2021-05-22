@@ -1,5 +1,7 @@
 <?php
 
+include 'inc/init.php';
+
 ////
 ///
 //       TRAITEMENT DU FORMULAIRE D'INSCRIPTION
@@ -107,7 +109,7 @@ if (!empty($_POST)) {
 // source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
 
 
-require_once '../inc/haut.php';
+require_once 'inc/haut.php';
 ?>
 
 <!-- container principal  -->
@@ -229,7 +231,7 @@ require_once '../inc/haut.php';
 </div><!-- / fin container -->
 
 <?php
-require_once '../inc/bas.php';
+require_once 'inc/bas.php';
 
 
 ?>

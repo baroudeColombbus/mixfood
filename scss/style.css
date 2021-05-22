@@ -7,6 +7,15 @@ body {
   background-color: #cc1616;
 }
 
+nav.centrer {
+  display: block;
+  margin: 0 auto;
+}
+
+nav li .centra {
+  text-align: center;
+}
+
 nav a {
   padding: 2em;
 }

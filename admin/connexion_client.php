@@ -4,29 +4,33 @@ include 'inc/init.php';
 $message = '';
 $contenu = '';
 
-// jeprint_r($_GET);
-// if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
-//     unset($_SESSION['utlisateur']);
-//     $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
-// }
+jeprint_r($_GET);
+if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
+    unset($_SESSION['utlisateur']);
+    $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
+}
 
 // 3- Vérification si membre est déjà connecté : 
 if (estConnecte()) {
     header('location:../index.php'); //redirection vers l'accueil
+    $message = '<div class="alert alert-primary">Vous êtes connecté.</div>';
     exit();
 }
 
 // 1- Traitement du formulaire de connexion
 jeprint_r($_POST);
+
 if (!empty($_POST)) {
-    if (empty($_POST['email']) || empty($_POST['mdp'])) {
+
+    if (empty($_POST['email']) || empty($_POST['mot_de_passe'])) {
         $contenu .= '<div class="alert alert-danger">Veuillez entrer vos informations</div>';
     }
     if (empty($contenu)) {
+
         $resultat = executeRequete(" SELECT * FROM utilisateur WHERE email = :email", array(':email' => $_POST['email']));
         if ($resultat->rowCount() == 1) {
             $utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($_POST['mdp'], $utilisateur['mdp'])) {
+            if (password_verify($_POST['mot_de_passe'], $utilisateur['mot_de_passe'])) {
                 $_SESSION['utilisateur'] = $utilisateur;
                 // header('location:profil_client.php');
                 exit();
@@ -38,9 +42,10 @@ if (!empty($_POST)) {
         } /*fin if ($resultat)*/
     } /*if (empty($contenu))*/
 } /*if !empty($_POST)*/
-// require_once 'inc/header.php';
+
 echo $message; //pour afficher le message lors de la connexion
 echo $contenu; //pour afficher les autres messages
+
 
 
 require_once 'inc/haut.php';
@@ -64,8 +69,8 @@ require_once 'inc/haut.php';
                 </div>
 
                 <div class="col-6 col-md-6">
-                    <label for="mdp" class="form-label">Mot de passe</label>
-                    <input type="password" name="mdp" class="form-control" id="mdp">
+                    <label for="mot_de_passe " class="form-label">Mot de passe</label>
+                    <input type="password" name="mot_de_passe " class="form-control" id="mot_de_passe ">
                 </div>
 
                 <div class="col-12">

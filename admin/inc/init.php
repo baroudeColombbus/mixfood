@@ -25,11 +25,12 @@ $pdoSITE->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //     )
 // );
 
+// ///////// INCLUSION DES FONCTIONS ///////// //
+require_once 'functions.php';
+
 // ///////// OUVERTURE DE SESSION ///////// //
 session_start();
 
-// ///////// 4 - VARIABLE POUR LES CONTENUS ///////// //
+// /////////VARIABLE POUR LES CONTENUS ///////// //
 $message = ''; // déclaration d'une variable pour introduire une variable vide
-
-// ///////// 5 - INCLUSION DES FONCTIONS ///////// //
-require_once 'functions.php';
+$contenu = '';

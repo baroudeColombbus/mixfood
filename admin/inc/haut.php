@@ -40,20 +40,20 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item active">
-                        <a class="nav-link m-4" href="index.php">Accueil</a>
+                        <a class="nav-link m-4" href="../index.php">Accueil</a>
                     </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                         <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="pizza.html">Pizza</a></li>
-                            <li><a class="dropdown-item" href="sushi.html">Sushi</a></li>
+                            <li><a class="dropdown-item" href="../pizza.html">Pizza</a></li>
+                            <li><a class="dropdown-item" href="../sushi.html">Sushi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link m-4" href="#">Qui sommes-nous ?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4" href="contact.php">Contact</a>
+                        <a class="nav-link m-4" href="../contact.php">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN</a>
@@ -70,10 +70,10 @@
         </div>
         <div class="container-fluid col-sm-12 col-lg-2 mx-auto">
 
-            <a href="admin/inscription_client2.php">
+            <a href="inscription_client2.php">
                 <button class=" btn btn-success mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
             </a>
-            <a href="admin/connexion_client.php" class="mx-auto">
+            <a href="connexion_client.php" class="mx-auto">
                 <button class=" btn btn-success mx-auto mb-1 mx-auto boutonNav" id="btn-connexion" style="width:130%;">Se connecter</button>
             </a>
 

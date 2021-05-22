@@ -6,7 +6,7 @@ $contenu = '';
 jeprint_r($_POST);
 // Vérification si membre est déjà connecté : 
 if (estConnecte()) { // si membre déjà connecté on le renvoie vers son profil 
-    header('location:../index.php'); //redirection vers la page profil.php script que l'on quitte tout de suite
+    header('location:profil_client.php'); //redirection vers la page profil.php script que l'on quitte tout de suite
     exit(); // pour quitter le script header() est une fonction prédéfinie
 }
 //Traitement du formulaire de connexion
@@ -32,7 +32,7 @@ if (!empty($_POST)) { // si le formulaire est envoyé
             if (password_verify($_POST['mot_de_passe'], $utilisateur['mot_de_passe'])) { // si le hash du mdp de la bdd correspond au mdp du formulaire, alors password_verify retourne true
                 $_SESSION['utilisateur'] = $utilisateur; // nous créons une session avec (une session est un fichier sur le serveur) avec les informations du membre provenant de la BDD )
                 // redirection du membre vers l'accueil
-                header('location:../index.php');
+                header('location:profil_client.php');
                 exit();
             } else {
                 $contenu .= '<div class="alert alert-danger">Erreur sur les identifiants 1.</div>';

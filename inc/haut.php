@@ -65,15 +65,16 @@
                         </ul>
                     </li>
                 </ul>
+
             </div>
         </div>
         <div class="container-fluid col-sm-12 col-lg-2 mx-auto">
 
             <a href="admin/inscription_client2.php">
-                <button class="btn btn-warning mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
+                <button class=" btn btn-success mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
             </a>
-            <a href="admin/connexion_client.php" class="mx-auto">
-                <button class="btn btn-warning mx-auto mb-1 mx-auto boutonNav" id="btn-connexion" style="width:130%;">Se connecter</button>
+            <a href="admin/connexion_client2.php" class="mx-auto">
+                <button class=" btn btn-success mx-auto mb-1 mx-auto boutonNav" id="btn-connexion" style="width:130%;">Se connecter</button>
             </a>
 
         </div>

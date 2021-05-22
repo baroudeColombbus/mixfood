@@ -1,4 +1,5 @@
 <!-- Caroussel de l'accueil -->
+
 <div class="container p-5 mb-5 carousselAccueil d-none d-md-block d-lg-block">
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -8,13 +9,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
-                <img src="img/pizza1.jpg" class="d-block w-100" alt="pizza" width="50%" height="70%">
+                <img src="img/pizza1.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="pizza" width="50%" height="70%">
                 <!-- <div class="carousel-caption d-none d-md-block text-light">
                     <h5>Pizza faite avec amour</h5>
                 </div> -->
             </div>
             <div class="carousel-item" data-bs-interval="5000">
-                <img src="img/sushi1.jpg" class="d-block w-100" alt="sushi" width="50%" height="70%">
+                <img src="img/sushi1.jpg" class="d-block w-100 img-curvy img-thumbnail img-responsive" alt="sushi" width="50%" height="70%">
                 <!-- <div class="carousel-caption d-none d-md-block">
                     <h5>Sushi confectionné avec doigté</h5>
                 </div> -->

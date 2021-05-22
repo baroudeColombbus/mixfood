@@ -1,9 +1,10 @@
 // variable de couleurs
 $rouge: rgb(204, 22, 22);
-$blanc: #fff;
-$vertF: #043227;
+$blanc: rgb(221, 221, 221);
+$success: #28a745;
 $noir: #000;
 $jaune: #ffbb00;
+$gris: grey;
 
 // variables de border radius
 $img_border_radius:             3rem;
@@ -21,7 +22,7 @@ p {
 
 body {
     font-family: 'Roboto', sans-serif; 
-    background-color: $rouge;
+    background-color: $gris;
 }
 
 nav.centrer {
@@ -46,12 +47,17 @@ nav li:hover {
     max-height: 700px;
 }
 
-footer a:link {
+footer a {
+    color: $success;
+    text-decoration: none;
+}
+
+footer a:hover {
     color: $rouge;
 }
 
 footer .icon-fb {
-    color: $rouge;
+    color: $success;
 }
 
 .produit-menu-img{

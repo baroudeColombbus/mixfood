@@ -1,10 +1,10 @@
 p {
-  color: #fff;
+  color: #dddddd;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #cc1616;
+  background-color: grey;
 }
 
 nav.centrer {
@@ -29,12 +29,17 @@ nav li:hover {
   max-height: 700px;
 }
 
-footer a:link {
+footer a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+footer a:hover {
   color: #cc1616;
 }
 
 footer .icon-fb {
-  color: #cc1616;
+  color: #28a745;
 }
 
 .produit-menu-img {

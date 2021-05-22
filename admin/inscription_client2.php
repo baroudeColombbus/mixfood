@@ -62,7 +62,7 @@ if (!empty($_POST)) { // Si des données sont en POST
                     ':prenom'           => $_POST['prenom'],
                     ':email'            => $_POST['email'],
                     ':telephone'        => $_POST['telephone'],
-                    ':mot_de_passe'     => $_POST['mot_de_passe'], //on prend le mot de passe hashé
+                    ':mot_de_passe'     => $mot_de_passe, //on prend le mot de passe hashé
                     ':adresse'          => $_POST['adresse'],
                     ':ville'            => $_POST['ville'],
                     ':code_postal'      => $_POST['code_postal'],
@@ -91,7 +91,7 @@ if (!empty($_POST)) { // Si des données sont en POST
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <title>La boutique - Inscription</title>
+    <title>Mixfood - Inscription</title>
 
     <!-- Mes styles -->
     <link href="css/style2.css" rel="stylesheet">
@@ -104,7 +104,7 @@ if (!empty($_POST)) { // Si des données sont en POST
     <main class="container bg-white m-4 mx-auto p-4">
         <div class="row">
             <div class="col-sm-12 col-md-6 border border-success m-auto mb-4 alert alert-success">
-                <h1 class="text-center">La boutique</h1>
+                <h1 class="text-center">MIXFOOD</h1>
             </div><!-- Fin de col -->
         </div><!-- Fin row -->
 

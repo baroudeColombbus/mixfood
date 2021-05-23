@@ -68,14 +68,23 @@
 
             </div>
         </div>
-        <div class="container-fluid col-sm-12 col-lg-2 mx-auto">
+        <div class="container-fluid col-sm-12 col-lg-4 mx-auto">
+            <?php
+            if (estConnecte()) { // si membre utilisateur connecté
+                echo '<button class="btn nav-item"><a class="nav-link" href="profil_client.php">Profil</a></button>';
+                echo '<button class="btn nav-item"><a class="nav-link" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
+            } else {
+                echo '<button class=" btn nav-item"><a class="nav-link" href="inscription_client2.php">Inscription</a></button>';
+                echo '<button class=" btn nav-item"><a class="nav-link" href="connexion_client2.php">Connexion</a></button>';
+            }
+            ?>
 
-            <a href="inscription_client2.php">
+            <!--<a href="inscription_client2.php">
                 <button class=" btn btn-success mr-1 mb-1 mx-auto boutonNav" id="btn-inscription">S'inscrire</button>
             </a>
             <a href="connexion_client.php" class="mx-auto">
                 <button class=" btn btn-success mx-auto mb-1 mx-auto boutonNav" id="btn-connexion" style="width:130%;">Se connecter</button>
-            </a>
+            </a>-->
 
         </div>
     </nav>

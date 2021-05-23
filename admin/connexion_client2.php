@@ -51,10 +51,9 @@ echo $contenu; //pour affciher les autres messages
 
 
 // Déconnexion de l'internaute
-if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') { // si existe action dans l'url et que sa valeur est "deconnexion" on peut sortir c'est que le membre veut se déconnecter 
-    unset($_SESSION['membre']); // on supprime le membre de la session (tout le contenu du tableau membre)
-    $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
-}
+
+session_destroy(); //On détruit le cookie de l'identifiant.
+header("../index.php"); //On revient au départ.
 // jeprint_r($_GET);
 
 include 'inc/haut.php';

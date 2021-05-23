@@ -6,16 +6,66 @@ require_once 'inc/init.php';
 
 // Accès à la page quand on est autorisé, connexion membre obligatoire
 if (!estConnecte()) {
-    header('location:connexion-client2.php'); // renvoie à la page de connexion
+    header('location:connexion_client2.php'); // renvoie à la page de connexion
+}
+
+// Déconnexion de l'internaute
+jeprint_r($_GET);
+
+
+//  session_destroy(); 
+//     header("../index.php"); 
+if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
+    unset($_SESSION['utilisateur']);
+    // $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
+    header('location:connexion_client2.php');
 }
 
 include 'inc/haut.php';
+
+
 ?>
 
-<main class="container bg-white m-4 mx-auto p-4">
-    <div class="col-sm-12 col-md-8 col-lg-6 border border-success mx-auto m-4 p-4">
-        <h1 class="mt-4 text-center">Bienvenue sur votre profil</h1>
-        <h2 class="bg-primary text-white text-center">Bonjour <?php echo $_SESSION['utilisateur']['prenom']; ?> !</h2>
+
+
+<main class="container bg-white m-4 mx-auto p-4 row">
+    <h1 class="mt-4 text-center">Bienvenue sur votre profil</h1>
+
+    <?php
+    echo $message;
+
+    ?>
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4 alert alert-dark">
+
+        <h2 class="bg-success text-white text-center">Bonjour <?php echo $_SESSION['utilisateur']['prenom']; ?> !</h2>
+
+        <?php
+        if (estAdmin()) {
+            echo '<p>Vous êtes un administrateur</p>';
+            echo '<a class="btn btn-secondary" href=" #"> Admin</a>';
+            echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
+            echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
+        } else {
+            echo '<p class="text-dark">Vous êtes un client</p>';
+        }
+
+        ?>
+        <hr>
+        <h3>Informations de profil</h3>
+        <ul>
+            <li>Prénom : <?php echo $_SESSION['utilisateur']['prenom']; ?> </li>
+            <li>Nom : <?php echo $_SESSION['utilisateur']['nom']; ?> </li>
+            <li>Email : <?php echo $_SESSION['utilisateur']['email']; ?> </li>
+            <li>Adresse : <?php echo $_SESSION['utilisateur']['adresse']; ?> </li>
+            <li>Code postal : <?php echo $_SESSION['utilisateur']['code_postal']; ?> </li>
+            <li>Ville : <?php echo $_SESSION['utilisateur']['ville']; ?> </li>
+            <li>Numéro de téléphone : <?php echo $_SESSION['utilisateur']['telephone']; ?> </li>
+        </ul>
+
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4">
+        <h2 class="bg-success text-white text-center">Modifier votre profil</h2>
         <!--Pour afficher pseudo il faut aller dans le tableau $_SESSION puis à l'indice ['membre'] puis à l'intérieur à l'indice ['pseudo'] pour accéder à la valeur pseudo, voir le debug jeprint_r plus haut-->
         <?php
         if (estAdmin()) {
@@ -24,17 +74,65 @@ include 'inc/haut.php';
             echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
             echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
         } else {
-            echo '<p>Vous êtes un client</p>';
+            echo '<p class="text-dark">Vous êtes un client</p>';
         }
 
         ?>
         <hr>
-        <h3>Informations de profil</h3>
-        <p>Email : <?php echo $_SESSION['utilisateur']['email']; ?> </p>
-        <p>Adresse : <?php echo $_SESSION['utilisateur']['adresse']; ?> </p>
-        <p>Code postal : <?php echo $_SESSION['utilisateur']['code_postal']; ?> </p>
-        <p>Ville : <?php echo $_SESSION['utilisateur']['ville']; ?> </p>
-        <p>Numéro de téléphone : <?php echo $_SESSION['utilisateur']['telephone']; ?> </p>
+        <!-- DEBUT DU FORMULAIRE -->
+        <form method="POST" action="" class=" row p-5 m-2 border border-dark alert alert-dark " id="formulaireInscription">
+
+
+            <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- nom -->
+                <label for="nom" class="form-label">Nom de famille*</label>
+                <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $_POST['nom'] ?? ''; ?>" required placeholder="Votre nom de famille">
+            </div>
+            <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- prenom -->
+                <label for="prenom" class="form-label">Prénom*</label>
+                <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $_POST['prenom'] ?? ''; ?>" required placeholder="Votre prénom">
+            </div>
+            <div class="form-group p-2">
+                <!-- mot_de_passe -->
+                <label for="mot_de_passe" class="form-label">Mot de passe*</label>
+                <input type="password" class="form-control text-right" name="mot_de_passe" id="mot_de_passe" required placeholder="Seul vous le connaissez">
+                <small class='bg-dark text-white'>votre mot de passe doit contenir 4 à 20 caractères</small>
+            </div>
+            <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- mail -->
+                <label for="email" class="form-label">Adresse éléctronique*</label>
+                <input type="email" class="form-control text-right" name="email" id="email" value="<?php echo $_POST['email'] ?? ''; ?>" required placeholder="Votre email">
+            </div>
+            <div class=" form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- telephone -->
+                <label for="telephone" class="form-label">Téléphone</label>
+                <input type="text" name="telephone" class="form-control" id="telephone" required placeholder="Votre numéro de téléphone">
+            </div>
+            <div class="form-group p-2">
+                <!-- adresse -->
+                <label for="adresse" class="form-label">Adresse postale*</label>
+                <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre adresse"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
+            </div>
+            <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- code_postal -->
+                <label for="code_postal" class="form-label">Code Postal*</label>
+                <input type="text" class="form-control text-right" name="code_postal" id="code_postal" value="<?php echo $_POST['code_postal'] ?? ''; ?>" required placeholder="Votre code-postal">
+            </div>
+            <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                <!-- ville -->
+                <label for="ville" class="form-label">Ville*</label>
+                <input type="text" class="form-control" name="ville" id="ville" value="<?php echo $_POST['ville'] ?? ''; ?>" required placeholder="Votre ville">
+            </div>
+
+            <div class="form-group text-center">
+                <!-- bouton reseat formulaire -->
+                <button class="btn btn-warning mt-3" type="reset" value="Reset">Effacer</button>
+                <!-- bouton envoyer -->
+                <button type="submit" class="btn btn-dark mt-3">Modifier</button>
+
+            </div>
+        </form> <!-- fin de formulaire -->
 
     </div>
 

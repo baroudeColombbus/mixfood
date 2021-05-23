@@ -32,14 +32,20 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
         <div class="container">
-            <img src="../img/logoBlanc.png" alt="logo-mixfood" width="10%" height="10%" class="mt-3 img-responsive mb-3">
+            <picture>
+                <!-- affichage logo mode mobile -->
+                <source media="(max-width: 1024px)" srcset="../img/logoMobile.png 1x" class="logoMobile">
+                <!-- affichage logo mode destok -->
+                <source media="(min-width: 1024px)" srcset="../img/logoBlanc.png 2x" class="logoDestok">
+                <img src="img/logoBlanc.png" alt="logo-mixfood" class="mt-3 img-responsive mb-3">
+            </picture>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item active">
-                        <a class="nav-link m-4" href="../index.php">Accueil</a>
+                        <a class="nav-link m-4" href="../index.php">MIXFOOD</a>
                     </li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>

@@ -141,9 +141,10 @@ include 'inc/haut.php';
 
                 <div class="form-group text-center">
                     <!-- bouton reseat formulaire -->
-                    <button class="btn btn-warning mt-3" type="reset" value="Reset">Effacer</button>
+                    <button class="btn btn-dark mt-3" type="reset" value="Reset">Effacer</button>
+
                     <!-- bouton envoyer -->
-                    <button type="submit" class="btn btn-dark mt-3">S'inscrire</button>
+                    <button type="submit" class="btn btn-success mt-3">S'inscrire</button>
 
                 </div>
             </form> <!-- fin de formulaire -->

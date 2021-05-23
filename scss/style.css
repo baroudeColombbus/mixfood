@@ -1,5 +1,5 @@
 p {
-  color: #dddddd;
+  color: #ece6e6;
 }
 
 .titreChoix {
@@ -25,8 +25,22 @@ nav a {
   padding: 2em;
 }
 
+nav a:hover {
+  color: #ece6e6;
+}
+
 nav li:hover {
   background-color: #157347;
+}
+
+.lienVert {
+  color: #157347;
+  text-decoration: none;
+}
+
+.lienBlanc {
+  color: #ece6e6;
+  text-decoration: none;
 }
 
 .carousselAccueil img {

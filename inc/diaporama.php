@@ -1,5 +1,5 @@
 <!-- Caroussel de l'accueil -->
-<h1 class="titreChoix text-white text-center d-none d-md-block d-lg-block">Pizza ou Sushi, pourquoi choisir ?</h1>
+<h1 class="titreChoix text-white text-center d-none d-md-block d-lg-block">Pizza ? Sushi ?</h1>
 <div class="container mb-5 carousselAccueil d-none d-md-block d-lg-block">
     <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">

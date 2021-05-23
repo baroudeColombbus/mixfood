@@ -1,5 +1,5 @@
 <?php
-
+include 'inc/init.php';
 include 'inc/haut.php';
 include 'inc/diaporama.php';
 
@@ -7,7 +7,7 @@ include 'inc/diaporama.php';
 
 <!-- /container principal -->
 <div class="container m-auto">
-    <h2 class="text-center mt-4 text-light titreChoix">Votre choix</h2>
+    <h2 class="text-center mt-4 text-light titreChoix"> Pourquoi choisir ? ...</h2>
 
     <div class="row  text-center mb-5">
         <div class="col-lg-6 mt-3">

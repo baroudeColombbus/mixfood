@@ -10,7 +10,7 @@
             <div class="row">
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 d-none d-md-block d-lg-block ">
-                    <h6><img src="img/mixfoodNoir.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="20%" height="20%"></h6>
+                    <h6><img src="img/logoMobile.png" alt="logo-mixfood" class="img-fluid  mixfooter align-center pt-5" width="30%" height="30%"></h6>
                 </div>
                 <!-- Grid column -->
 
@@ -47,8 +47,12 @@
                     </p>
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
-                            <p class="">Newletter </p>
-                            <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button> <label for="subscribe-email" class="subscribe-message"></label> </form>
+                            <p class="">Newsletter </p>
+                            <form id="subscribe" novalidate="true">
+                                <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Votre email" spellcheck="false" type="text">
+                                <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button>
+                                <label for="subscribe-email" class="subscribe-message"></label>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -71,7 +75,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3">
-        <p class="fw-light mt-4"> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
+        <p class="fw-light mt-4  text-muted "> &copy;<?php echo date("Y");  ?><a href="#"> mixfood </a> tous droits réservés </p>
     </div>
     <!-- Copyright -->
 </footer>

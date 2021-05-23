@@ -32,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
         <div class="container">
-            <img src="../img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
+            <img src="../img/logoBlanc.png" alt="logo-mixfood" width="10%" height="10%" class="mt-3 img-responsive mb-3">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,22 +58,23 @@
 
             </div>
         </div>
-        <div class="container-fluid col-sm-12 col-lg-5 mx-auto">
+        <div class="container col-sm-11 col-lg-2 mx-auto justify-content-center navbar-collapse collapse ">
             <?php
 
             // visible pour les administrateurs
             if (estAdmin()) {
-                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="manage_utilisateur_client.php">ADMIN</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="gestion_produit.php">Produit</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="#">Commande</a></button>';
+                echo '<ul class="navbar-nav align-items-center">';
+                echo '<li class="nav-item"><a class="nav-link lienBlanc" href="manage_utilisateur_client.php">ADMIN</a></li>';
+                echo '<li class=" nav-item"><a class="nav-link lienBlanc" href="gestion_produit.php">Produit</a></li>';
+                echo '<li class=" nav-item"><a class="nav-link lienBlanc" href="#">Commande</a></li></ul>';
             }
 
             if (estConnecte()) { // si membre utilisateur connecté
-                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="profil_client.php">Profil</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
+                echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc" href="profil_client.php">Profil</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link lienBlanc" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
             } else { //sinon
-                echo '<button class=" btn btn-success nav-item"><a class="nav-link" href="inscription_client2.php">Inscription</a></button>';
-                echo '<button class=" btn btn-success nav-item"><a class="nav-link" href="connexion_client2.php">Connexion</a></button>';
+                echo '<button class=" btn btn-success nav-item m-2"><a class="nav-link lienBlanc" href="inscription_client2.php">Inscription</a></button>';
+                echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc" href="connexion_client2.php">Connexion</a></button>';
             }
             ?>
 

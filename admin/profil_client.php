@@ -22,7 +22,7 @@ include 'inc/haut.php';
 
 ?>
 
-<main class="container m-4 mx-auto p-4 row">
+<main class="container m-2 mx-auto p-2 row">
     <h1 class="mt-4 text-center titreChoix text-white">Bienvenue sur votre profil
         <?php
         if (estAdmin()) {
@@ -37,24 +37,26 @@ include 'inc/haut.php';
     echo $message;
     ?>
 
-    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4">
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2">
 
         <h2 class="text-white text-center">Bonjour <?php echo $_SESSION['utilisateur']['prenom']; ?> !</h2>
 
         <hr>
 
-        <div class="card mx-auto " style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title text-center">Information</h5>
+        <div class="card mx-auto alert alert-success" style="width: 18rem;">
+            <div class="card-body ">
+                <h5 class="card-title text-center">Informations</h5>
 
-                <ul>
-                    <li>Prénom : <?php echo $_SESSION['utilisateur']['prenom']; ?> </li>
-                    <li>Nom : <?php echo $_SESSION['utilisateur']['nom']; ?> </li>
-                    <li>Email : <?php echo $_SESSION['utilisateur']['email']; ?> </li>
-                    <li>Adresse : <?php echo $_SESSION['utilisateur']['adresse']; ?> </li>
-                    <li>Code postal : <?php echo $_SESSION['utilisateur']['code_postal']; ?> </li>
-                    <li>Ville : <?php echo $_SESSION['utilisateur']['ville']; ?> </li>
-                    <li>Téléphone : <?php echo $_SESSION['utilisateur']['telephone']; ?> </li>
+                <ul class="list-group">
+                    <li class="list-group-item">Prénom :<br> <?php echo $_SESSION['utilisateur']['prenom']; ?> </li>
+                    <li class="list-group-item">Nom : <br> <?php echo $_SESSION['utilisateur']['nom']; ?> </li>
+                    <li class="list-group-item">Email :<br> <?php echo $_SESSION['utilisateur']['email']; ?> </li>
+                    <li class="list-group-item">Adresse :<br> <?php echo $_SESSION['utilisateur']['adresse']; ?> </li>
+                    <li class="list-group-item">Code postal :<br> <?php echo $_SESSION['utilisateur']['code_postal']; ?> </li>
+                    <li class="list-group-item">Ville :<br> <?php echo $_SESSION['utilisateur']['ville']; ?> </li>
+                    <li class="list-group-item">Téléphone :<br> <?php echo $_SESSION['utilisateur']['telephone']; ?> </li>
+                    <li class="list-group-item">Date d'inscription : <br> <?php echo $_SESSION['utilisateur']['date_enregistrement']; ?> </li>
+
                 </ul>
 
             </div>
@@ -62,23 +64,11 @@ include 'inc/haut.php';
 
     </div>
 
-    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4">
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2">
         <h2 class=" text-white text-center">Modifier votre profil</h2>
-        <!--Pour afficher pseudo il faut aller dans le tableau $_SESSION puis à l'indice ['membre'] puis à l'intérieur à l'indice ['pseudo'] pour accéder à la valeur pseudo, voir le debug jeprint_r plus haut-->
-        <?php
-        // if (estAdmin()) {
-        //     echo '<p>Vous êtes un administrateur</p>';
-        //     echo '<a class="btn btn-secondary" href=" #"> Admin</a>';
-        //     echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
-        //     echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
-        // } else {
-        //     echo '<p class="text-dark">Vous êtes un client</p>';
-        // }
-
-        ?>
         <hr>
         <!-- DEBUT DU FORMULAIRE -->
-        <form method="POST" action="" class=" row p-5 m-2 border border-dark alert alert-dark " id="formulaireInscription">
+        <form method="POST" action="" class=" row p-5 m-2 border border-success alert alert-success " id="formulaireInscription">
 
 
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">

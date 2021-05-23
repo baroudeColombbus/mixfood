@@ -2,18 +2,21 @@
 
 include 'inc/haut.php';
 include 'inc/diaporama.php';
-?>
 
+
+?>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Rock+Salt&display=swap" rel="stylesheet">
 <!-- /container principal -->
 <div class="container m-auto">
-    <h2 class="text-center mt-4 text-light">Votre choix</h2>
+    <h2 class="text-center mt-4 text-light titreChoix">Votre choix</h2>
 
     <div class="row  text-center mb-5">
         <div class="col-lg-6 mt-3">
-            <a href="pizza.html"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail img-responsive" width="65%" height="65%"></a>
+            <a href="pizza.html"> <img src="img/pizza-napolitaine.jpg" alt="Pizza" class="img-curvy img-thumbnail img-responsive" width="65%" height="65%" style="background-color:#28a745; border-color:#28a745;"></a>
         </div>
         <div class="col-lg-6 mt-3">
-            <a href="sushi.html"> <img src="img/sushi9.jpg" alt="Sushi" class="img-curvy img-thumbnail img-responsive" width="65%" height="65%"></a>
+            <a href="sushi.html"> <img src="img/sushi9.jpg" alt="Sushi" class="img-curvy img-thumbnail img-responsive" width="65%" height="65%" style="background-color:#28a745; border-color:#28a745;"></a>
         </div>
 
     </div>

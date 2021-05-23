@@ -48,7 +48,7 @@
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
                             <p class="">Newletter </p>
-                            <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-rss"></i> GO</button> <label for="subscribe-email" class="subscribe-message"></label> </form>
+                            <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button> <label for="subscribe-email" class="subscribe-message"></label> </form>
                         </div>
                     </div>
                 </div>

@@ -2,19 +2,15 @@
 require_once 'inc/init.php';
 //1- Vérification de la session : 
 // jeprint_r($_SESSION);
-// require_once 'inc/header.php';
 
-// Accès à la page quand on est autorisé, connexion membre obligatoire
+// Connexion obligatoire pour accéder à la page profil
 if (!estConnecte()) {
     header('location:connexion_client2.php'); // renvoie à la page de connexion
 }
 
 // Déconnexion de l'internaute
-jeprint_r($_GET);
+// jeprint_r($_GET);
 
-
-//  session_destroy(); 
-//     header("../index.php"); 
 if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
     unset($_SESSION['utilisateur']);
     // $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
@@ -25,8 +21,6 @@ include 'inc/haut.php';
 
 
 ?>
-
-
 
 <main class="container bg-white m-4 mx-auto p-4 row">
     <h1 class="mt-4 text-center">Bienvenue sur votre profil</h1>

@@ -2,6 +2,11 @@ p {
   color: #dddddd;
 }
 
+.titreChoix {
+  font-family: 'Give You Glory', cursive;
+  font-size: 5em;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: grey;
@@ -21,7 +26,7 @@ nav a {
 }
 
 nav li:hover {
-  background-color: #ffb300;
+  background-color: #157347;
 }
 
 .carousselAccueil img {
@@ -30,7 +35,7 @@ nav li:hover {
 }
 
 footer a {
-  color: #28a745;
+  color: #157347;
   text-decoration: none;
 }
 
@@ -39,7 +44,7 @@ footer a:hover {
 }
 
 footer .icon-fb {
-  color: #28a745;
+  color: #157347;
 }
 
 .produit-menu-img {

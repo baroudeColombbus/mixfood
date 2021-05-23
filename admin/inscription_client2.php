@@ -81,10 +81,10 @@ include 'inc/haut.php';
 <!-- ********************************-->
 <!-- CONTENU PRINCIPAL -->
 <!-- ********************************-->
-<main class="container  m-4 mx-auto p-4">
+<main class="container mx-auto ">
     <div class="row">
-        <div class="col-sm-12 col-md-6 border border-dark m-auto mb-4 alert alert-dark">
-            <h1 class="text-center">Mixfood INSCRIVEZ VOUS</h1>
+        <div class="col-sm-12 mx-auto ">
+            <h1 class="text-center titreChoix text-white">MIXFOOD Inscrivez-vous !!!</h1>
         </div><!-- Fin de col -->
     </div><!-- Fin row -->
 

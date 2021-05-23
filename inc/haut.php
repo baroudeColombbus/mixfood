@@ -32,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
         <div class="container">
-            <img src="img/logo2.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
+            <img src="img/logo2.png" alt="logo-mixfodd" width="15%" height="15%" class="mt-3 img-responsive mb-3 rounded-circle" style="background-color:#CECECE;">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,15 +54,7 @@
                     <li class="nav-item">
                         <a class="nav-link m-4" href="contact.php">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN</a>
-                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Gestion</a></li>
-                            <li><a class="dropdown-item" href="#">Produits</a></li>
-                            <li><a class="dropdown-item" href="#">Commandes</a></li>
 
-                        </ul>
-                    </li>
                 </ul>
 
             </div>

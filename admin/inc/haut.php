@@ -54,37 +54,26 @@
                     <li class="nav-item">
                         <a class="nav-link m-4" href="../contact.php">Contact</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN</a>
-                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Gestion</a></li>
-                            <li><a class="dropdown-item" href="#">Produits</a></li>
-                            <li><a class="dropdown-item" href="#">Commandes</a></li>
-
-                        </ul>
-                    </li> -->
                 </ul>
 
             </div>
         </div>
-        <div class="container-fluid col-sm-12 col-lg-4 mx-auto">
+        <div class="container-fluid col-sm-12 col-lg-5 mx-auto">
             <?php
 
-            // créer une li pour les administrateurs
+            // visible pour les administrateurs
             if (estAdmin()) {
-                echo '<button class="btn btn-light nav-item"><a class="nav-link" href="manage_utilisateur_client.php">ADMIN</a></button>';
-                echo '<button class="btn btn-light nav-item"><a class="nav-link" href="gestion_produit.php">Produit</a></button>';
-                echo '<button class="btn btn-light nav-item"><a class="nav-link" href="#">Commande</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="manage_utilisateur_client.php">ADMIN</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="gestion_produit.php">Produit</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="#">Commande</a></button>';
             }
 
-
-
             if (estConnecte()) { // si membre utilisateur connecté
-                echo '<button class="btn btn-light nav-item"><a class="nav-link" href="profil_client.php">Profil</a></button>';
-                echo '<button class="btn btn-light nav-item"><a class="nav-link" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="profil_client.php">Profil</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
             } else { //sinon
-                echo '<button class=" btn btn-light nav-item"><a class="nav-link" href="inscription_client2.php">Inscription</a></button>';
-                echo '<button class=" btn btn-light nav-item"><a class="nav-link" href="connexion_client2.php">Connexion</a></button>';
+                echo '<button class=" btn btn-success nav-item"><a class="nav-link" href="inscription_client2.php">Inscription</a></button>';
+                echo '<button class=" btn btn-success nav-item"><a class="nav-link" href="connexion_client2.php">Connexion</a></button>';
             }
             ?>
 

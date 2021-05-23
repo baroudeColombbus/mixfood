@@ -59,22 +59,22 @@ header("../index.php"); //On revient au départ.
 include 'inc/haut.php';
 ?>
 
-<main class="container bg-white m-4 mx-auto p-4">
-    <div class="col-sm-12 col-md-8 col-lg-6 border border-success mx-auto m-4 p-4">
-        <form class="form-signin p-4" method="POST" action="">
-            <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-            <div class="form-group mt-2">
+<main class="container m-4 mx-auto p-4">
+    <div class="col-sm-12 col-md-8 col-lg-7 mx-auto m-4 p-4">
+        <form class="form-signin p-4 mx-auto text-center" method="POST" action="">
+            <h1 class="h3 mb-3 font-weight-normal titreChoix text-white">Connectez-vous</h1>
+            <div class="form-group mt-2 col-sm-12 col-md-6 col-lg-6 mx-auto">
                 <label for="email" class="sr-only">Email</label>
                 <input type="text" id="email" class="form-control" placeholder="votre email" autofocus name="email">
             </div>
-            <div class="form-group mt-2">
+            <div class="form-group mt-2  col-sm-12 col-md-6 col-lg-6 mx-auto">
                 <label for="mot_de_passe" class="sr-only">Mot de passe</label>
                 <input type="password" id="mot_de_passe" class="form-control" placeholder="vous seul le connaissez !" name="mot_de_passe">
             </div>
-            <button class="btn btn-sm btn-primary btn-block mt-2" type="submit">Connexion</button>
-            <p class="mt-5 mb-3 text-muted">Connectez-vous pour administrer "La Boutique"</p>
+            <button class="btn btn-sm btn-success btn-block mt-2" type="submit">Connexion</button>
+
         </form>
-        <p class="small">Vous n'êtes pas inscrit ? <a href="inscription_client2.php">Inscrivez-vous ici.</a> - <a href="">Retour sur le site</a></p>
+        <p class="small text-center">Vous n'êtes pas inscrit ? <a href="inscription_client2.php">Inscrivez-vous ici.</a> - <a href="../index.php">Retour sur le site</a></p>
     </div>
 </main>
 

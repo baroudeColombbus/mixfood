@@ -22,54 +22,58 @@ include 'inc/haut.php';
 
 ?>
 
-<main class="container bg-white m-4 mx-auto p-4 row">
-    <h1 class="mt-4 text-center">Bienvenue sur votre profil</h1>
+<main class="container m-4 mx-auto p-4 row">
+    <h1 class="mt-4 text-center titreChoix text-white">Bienvenue sur votre profil
+        <?php
+        if (estAdmin()) {
+            echo ' administrateur';
+        } else {
+            echo 'client';
+        }
+        ?>
+    </h1>
 
     <?php
     echo $message;
-
     ?>
-    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4 alert alert-dark">
 
-        <h2 class="bg-success text-white text-center">Bonjour <?php echo $_SESSION['utilisateur']['prenom']; ?> !</h2>
+    <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4">
 
-        <?php
-        if (estAdmin()) {
-            echo '<p>Vous êtes un administrateur</p>';
-            echo '<a class="btn btn-secondary" href=" #"> Admin</a>';
-            echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
-            echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
-        } else {
-            echo '<p class="text-dark">Vous êtes un client</p>';
-        }
+        <h2 class="text-white text-center">Bonjour <?php echo $_SESSION['utilisateur']['prenom']; ?> !</h2>
 
-        ?>
         <hr>
-        <h3>Informations de profil</h3>
-        <ul>
-            <li>Prénom : <?php echo $_SESSION['utilisateur']['prenom']; ?> </li>
-            <li>Nom : <?php echo $_SESSION['utilisateur']['nom']; ?> </li>
-            <li>Email : <?php echo $_SESSION['utilisateur']['email']; ?> </li>
-            <li>Adresse : <?php echo $_SESSION['utilisateur']['adresse']; ?> </li>
-            <li>Code postal : <?php echo $_SESSION['utilisateur']['code_postal']; ?> </li>
-            <li>Ville : <?php echo $_SESSION['utilisateur']['ville']; ?> </li>
-            <li>Numéro de téléphone : <?php echo $_SESSION['utilisateur']['telephone']; ?> </li>
-        </ul>
+
+        <div class="card mx-auto " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Information</h5>
+
+                <ul>
+                    <li>Prénom : <?php echo $_SESSION['utilisateur']['prenom']; ?> </li>
+                    <li>Nom : <?php echo $_SESSION['utilisateur']['nom']; ?> </li>
+                    <li>Email : <?php echo $_SESSION['utilisateur']['email']; ?> </li>
+                    <li>Adresse : <?php echo $_SESSION['utilisateur']['adresse']; ?> </li>
+                    <li>Code postal : <?php echo $_SESSION['utilisateur']['code_postal']; ?> </li>
+                    <li>Ville : <?php echo $_SESSION['utilisateur']['ville']; ?> </li>
+                    <li>Téléphone : <?php echo $_SESSION['utilisateur']['telephone']; ?> </li>
+                </ul>
+
+            </div>
+        </div>
 
     </div>
 
     <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-4 p-4">
-        <h2 class="bg-success text-white text-center">Modifier votre profil</h2>
+        <h2 class=" text-white text-center">Modifier votre profil</h2>
         <!--Pour afficher pseudo il faut aller dans le tableau $_SESSION puis à l'indice ['membre'] puis à l'intérieur à l'indice ['pseudo'] pour accéder à la valeur pseudo, voir le debug jeprint_r plus haut-->
         <?php
-        if (estAdmin()) {
-            echo '<p>Vous êtes un administrateur</p>';
-            echo '<a class="btn btn-secondary" href=" #"> Admin</a>';
-            echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
-            echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
-        } else {
-            echo '<p class="text-dark">Vous êtes un client</p>';
-        }
+        // if (estAdmin()) {
+        //     echo '<p>Vous êtes un administrateur</p>';
+        //     echo '<a class="btn btn-secondary" href=" #"> Admin</a>';
+        //     echo '<a class="btn btn-secondary" href=" #"> Produit</a>';
+        //     echo '<a class="btn btn-secondary" href=" #"> Commande</a>';
+        // } else {
+        //     echo '<p class="text-dark">Vous êtes un client</p>';
+        // }
 
         ?>
         <hr>
@@ -121,9 +125,9 @@ include 'inc/haut.php';
 
             <div class="form-group text-center">
                 <!-- bouton reseat formulaire -->
-                <button class="btn btn-warning mt-3" type="reset" value="Reset">Effacer</button>
+                <button class="btn btn-dark mt-3" type="reset" value="Reset">Effacer</button>
                 <!-- bouton envoyer -->
-                <button type="submit" class="btn btn-dark mt-3">Modifier</button>
+                <button type="submit" class="btn btn-success mt-3">Modifier</button>
 
             </div>
         </form> <!-- fin de formulaire -->

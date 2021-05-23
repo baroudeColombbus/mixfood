@@ -3,10 +3,8 @@
 include 'inc/haut.php';
 include 'inc/diaporama.php';
 
-
 ?>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Rock+Salt&display=swap" rel="stylesheet">
+
 <!-- /container principal -->
 <div class="container m-auto">
     <h2 class="text-center mt-4 text-light titreChoix">Votre choix</h2>

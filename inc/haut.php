@@ -20,8 +20,7 @@
 
     <!-- Les typographies -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Rock+Salt&display=swap" rel="stylesheet">
 
     <title>MIXFOOD</title>
 </head><!-- / fin head -->
@@ -33,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
         <div class="container">
-            <img src="img/mixfoodNoir.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
+            <img src="img/logo2.png" alt="logo-mixfodd" width="10%" height="10%" class="mt-3 img-responsive mb-3">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>

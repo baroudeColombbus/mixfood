@@ -18,6 +18,11 @@ $font_awesome: 3rem;
 
 p {
     color: $blanc;
+    letter-spacing: 2px;
+}
+
+.espace {
+    letter-spacing: 2px;
 }
 
 // typographie écriture manuscrite
@@ -30,7 +35,6 @@ body {
     font-family: 'Roboto', sans-serif; 
     background-color: $gris;
 }
-
 
 // navbar
 nav.centrer {
@@ -62,7 +66,16 @@ nav li:hover {
 
 .lienBlanc {
     color: $blanc;
+}
+
+.lienBlanc:hover {
+    color: $blanc;
     text-decoration: none;
+    font-weight: bold;
+}
+
+a.liVert:active {
+    background-color: $success;
 }
 
 // caroussel

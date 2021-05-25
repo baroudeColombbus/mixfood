@@ -74,43 +74,37 @@ include 'inc/haut.php';
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- nom -->
                 <label for="nom" class="form-label">Nom de famille*</label>
-                <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $_POST['nom'] ?? ''; ?>" required placeholder="Votre nom de famille">
+                <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $_SESSION['utilisateur']['nom']; ?>" disabled>
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- prenom -->
                 <label for="prenom" class="form-label">Prénom*</label>
-                <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $_POST['prenom'] ?? ''; ?>" required placeholder="Votre prénom">
-            </div>
-            <div class="form-group p-2">
-                <!-- mot_de_passe -->
-                <label for="mot_de_passe" class="form-label">Mot de passe*</label>
-                <input type="password" class="form-control text-right" name="mot_de_passe" id="mot_de_passe" required placeholder="Seul vous le connaissez">
-                <small class='bg-dark text-white'>votre mot de passe doit contenir 4 à 20 caractères</small>
+                <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $_SESSION['utilisateur']['prenom']; ?>" disabled>
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- mail -->
                 <label for="email" class="form-label">Adresse éléctronique*</label>
-                <input type="email" class="form-control text-right" name="email" id="email" value="<?php echo $_POST['email'] ?? ''; ?>" required placeholder="Votre email">
+                <input type="email" class="form-control text-right" name="email" id="email" value="<?php echo $_POST['email'] ?? ''; ?>" required placeholder="Votre nouvel email">
             </div>
             <div class=" form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- telephone -->
                 <label for="telephone" class="form-label">Téléphone</label>
-                <input type="text" name="telephone" class="form-control" id="telephone" required placeholder="Votre numéro de téléphone">
+                <input type="text" name="telephone" class="form-control" id="telephone" required placeholder="Votre nouveau numéro " value="<?php echo $_POST['telephone'] ?? ''; ?>">
             </div>
             <div class="form-group p-2">
                 <!-- adresse -->
                 <label for="adresse" class="form-label">Adresse postale*</label>
-                <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre adresse"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
+                <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre nouvelle adresse"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- code_postal -->
                 <label for="code_postal" class="form-label">Code Postal*</label>
-                <input type="text" class="form-control text-right" name="code_postal" id="code_postal" value="<?php echo $_POST['code_postal'] ?? ''; ?>" required placeholder="Votre code-postal">
+                <input type="text" class="form-control text-right" name="code_postal" id="code_postal" value="<?php echo $_POST['code_postal'] ?? ''; ?>" required placeholder="Votre nouveau code-postal">
             </div>
             <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
                 <!-- ville -->
                 <label for="ville" class="form-label">Ville*</label>
-                <input type="text" class="form-control" name="ville" id="ville" value="<?php echo $_POST['ville'] ?? ''; ?>" required placeholder="Votre ville">
+                <input type="text" class="form-control" name="ville" id="ville" value="<?php echo $_POST['ville'] ?? ''; ?>" required placeholder="Votre nouvelle ville">
             </div>
 
             <div class="form-group text-center">

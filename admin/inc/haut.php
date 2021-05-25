@@ -69,7 +69,7 @@
 
             // visible pour les administrateurs
             if (estAdmin()) {
-                echo '<ul class="navbar-nav align-items-center">';
+                echo '<ul class="navbar-nav align-items-center  d-none d-lg-block d-md-block">';
                 echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="manage_utilisateur_client.php">ADMIN</a></li>';
                 echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="gestion_produit.php">Produit</a></li>';
                 echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';

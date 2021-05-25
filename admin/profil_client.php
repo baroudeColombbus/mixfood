@@ -98,7 +98,7 @@ include 'inc/haut.php';
 ?>
 
 <main class="container m-2 mx-auto p-2 row">
-    <h1 class="mt-4 text-center titreChoix text-white">Bienvenue sur votre profil
+    <h1 class="mt-4 text-center titreChoix text-white d-none d-lg-block d-md-block">Bienvenue sur votre profil
         <?php
         if (estAdmin()) {
             echo ' administrateur';
@@ -110,14 +110,11 @@ include 'inc/haut.php';
 
     <?php
     echo $message;
-    ?>
-    <?php
-    // pourquoi le contenu ne s'affiche pas???
     echo $contenu;
     ?>
 
-    <div class="col-12 row">
-        <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2">
+    <div class="col-12 row" id="blocResponsive">
+        <div class="col-sm-12 col-md-6 col-lg-6 mx-auto m-2 p-2" id="sectionR1">
 
             <h2 class="text-white text-center">Bonjour <?php echo $fiche['prenom']; ?> !</h2>
 
@@ -157,38 +154,38 @@ include 'inc/haut.php';
         <?php
         if (estAdmin()) {
             echo '
-            <div class="col-6 row text-center m-auto">
-            <div class="dropdown col-3">
+            <div class="col-sm-12 col-md-6 col-lg-6 m-auto row text-center " id="sectionR2">
+            <div class="dropdown col mb-2">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Utilisateur
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Ajouter</a></li>
-                    <li><a class="dropdown-item" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="dropdown col-3">
+            <div class="dropdown col mb-2">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     Catégories
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item" href="#">Ajouter</a></li>
-                    <li><a class="dropdown-item" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="dropdown col-3">
+            <div class="dropdown col mb-2">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                     Produit
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                    <li><a class="dropdown-item" href="#">Ajouter</a></li>
-                    <li><a class="dropdown-item" href="modifier_produit.php">Modifier</a></li>
-                    <li><a class="dropdown-item" href="#">Supprimer</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Ajouter</a></li>
+                    <li><a class="dropdown-item liVert" href="modifier_produit.php">Modifier</a></li>
+                    <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="col-3">
+            <div class="col mb-2">
                 <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Commande</a>
             </div>
         </div>';

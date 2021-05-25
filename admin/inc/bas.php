@@ -47,8 +47,12 @@
                     </p>
                     <div class="bbb-wrapper fl-wrap">
                         <div class="subcribe-form fl-wrap">
-                            <p class="">Newletter </p>
-                            <form id="subscribe" novalidate="true"> <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Email" spellcheck="false" type="text"> <button type="submit" id="subscribe-button" class="subscribe-button color-bg"><i class="fa fa-rss"></i> GO</button> <label for="subscribe-email" class="subscribe-message"></label> </form>
+                            <p class="">Newsletter </p>
+                            <form id="subscribe" novalidate="true">
+                                <input class="enteremail" name="EMAIL" id="subscribe-email" placeholder="Votre email" spellcheck="false" type="text">
+                                <button type="submit" id="subscribe-button" class=" btn btn-success subscribe-button "><i class="fa fa-rss"></i> GO</button>
+                                <label for="subscribe-email" class="subscribe-message"></label>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -59,7 +63,7 @@
                     <h6 class="text-uppercase text-center mb-4 font-weight-bold">Suivez-nous</h6>
 
                     <!-- Facebook -->
-                    <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb success"></i></a></p>
+                    <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb vert"></i></a></p>
 
                 </div>
             </div>

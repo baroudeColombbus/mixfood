@@ -155,5 +155,14 @@ footer .icon-fb {
     box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.65);
 }
 
+// changer l'ordre des sections responsive page profil
+@media screen and (max-width: 768px)
+{
+  #blocResponsive {
+    display:flex;
+    flex-flow:column;
+  }
+  div#sectionR2 {order:-1;}
+}
 
 

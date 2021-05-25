@@ -158,7 +158,7 @@ include_once 'inc/haut.php';
             </div> <!-- Fin accordeon -->
         </div><!-- Fin de col card -->
 
-        <div class="col-12 col-md-6 col-lg-4 ">
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
             <img src="img/pizza6-300.jpg" alt="pizza" class="img-curvy img-thumbnail" style="background-color:#28a745; border-color:#28a745;">
             <!-- accordeon -->
             <div class="accordion accordion-flush my-2 mx-auto" id="accordionP6" style="width:50%">

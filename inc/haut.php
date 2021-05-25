@@ -31,7 +31,7 @@
     <!-- navbar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md static-top">
-        <div class="container">
+        <div class="container col-md-6 col-lg-9">
             <picture>
                 <!-- affichage logo mode mobile -->
                 <source media="(max-width: 1024px)" srcset="img/logoMobile.png 1x" class="logoMobile">
@@ -65,7 +65,7 @@
 
             </div>
         </div>
-        <div class="container col-sm-11 col-lg-2 mx-auto justify-content-center navbar-collapse collapse ">
+        <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-end navbar-collapse collapse ">
             <?php
 
             // visible pour les administrateurs

@@ -2,7 +2,7 @@
   color: #157347;
 }
 
-p {
+p, h1 {
   color: #ece6e6;
   letter-spacing: 2px;
 }
@@ -14,6 +14,11 @@ p {
 .titreChoix {
   font-family: 'Give You Glory', cursive;
   font-size: 5em;
+}
+
+.typoChoix {
+  font-family: 'Give You Glory', cursive;
+  font-size: 2em;
 }
 
 body {

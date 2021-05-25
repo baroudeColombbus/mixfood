@@ -31,7 +31,7 @@ if (estConnecte()) {
 if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
     unset($_SESSION['utilisateur']);
     // $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
-    header('location:connexion_client2.php');
+    header('location:../index.php');
 }
 
 // Gestion de la modification de profil

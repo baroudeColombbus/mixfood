@@ -4,3 +4,5 @@
 HTML 
 CSS
 BOOTSTRAP 5
+javascript
+PHP

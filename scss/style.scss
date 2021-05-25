@@ -20,7 +20,7 @@ $border-radius-pill:          50rem;
 $font_awesome: 3rem;
 
 
-p {
+p, h1 {
     color: $blanc;
     letter-spacing: 2px;
 }
@@ -32,7 +32,12 @@ p {
 // typographie écriture manuscrite
 .titreChoix {
     font-family: 'Give You Glory', cursive;
-        font-size: 5em;
+    font-size: 5em;
+}
+
+.typoChoix {
+    font-family: 'Give You Glory', cursive;
+    font-size: 2em;
 }
 
 body {

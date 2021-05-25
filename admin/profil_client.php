@@ -151,8 +151,13 @@ include 'inc/haut.php';
             </div>
         </div>
 
-        <div class="col-6 row text-center m-auto">
-            <!-- bouton déroulant action pour l'administrateur -->
+
+        <!-- bouton déroulant action pour l'administrateur -->
+
+        <?php
+        if (estAdmin()) {
+            echo '
+            <div class="col-6 row text-center m-auto">
             <div class="dropdown col-3">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Utilisateur
@@ -186,7 +191,10 @@ include 'inc/haut.php';
             <div class="col-3">
                 <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Commande</a>
             </div>
-        </div>
+        </div>';
+        };
+        ?>
+
 
     </div>
 
@@ -249,8 +257,11 @@ include 'inc/haut.php';
     </div> <!-- fin col-12 -->
 
     <!-- information stat de la bdd coté ADMIN-->
-    <div class="row">
-        <!-- row-->
+
+    <?php
+    if (estAdmin()) {
+        echo '
+        <div class="row">
         <div class="row g-4 mb-4 m-auto">
             <div class="col-6 col-lg-3">
                 <div class="card h-100 rad">
@@ -263,12 +274,9 @@ include 'inc/haut.php';
                             </svg> 20%
                         </div>
                     </div>
-                    <!--//card-body-->
                     <a class="card-link-mask" href="#"></a>
                 </div>
-                <!--//card-->
             </div>
-            <!--//col-->
 
             <div class="col-6 col-lg-3">
                 <div class="card rad h-100">
@@ -281,12 +289,9 @@ include 'inc/haut.php';
                             </svg> 5%
                         </div>
                     </div>
-                    <!--//card-body-->
                     <a class="card-link-mask" href="#"></a>
                 </div>
-                <!--//card-->
             </div>
-            <!--//col-->
             <div class="col-6 col-lg-3">
                 <div class="card rad h-100">
                     <div class="card-body p-3 p-lg-4">
@@ -295,12 +300,9 @@ include 'inc/haut.php';
                         <div class="stats-meta">
                             Open</div>
                     </div>
-                    <!--//card-body-->
                     <a class="card-link-mask" href="#"></a>
                 </div>
-                <!--//card-->
             </div>
-            <!--//col-->
             <div class="col-6 col-lg-3">
                 <div class="card rad h-100">
                     <div class="card-body p-3 p-lg-4">
@@ -308,16 +310,15 @@ include 'inc/haut.php';
                         <div class="stats-figure">6</div>
                         <div class="stats-meta">New</div>
                     </div>
-                    <!--//card-body-->
                     <a class="card-link-mask" href="#"></a>
                 </div>
-                <!--//card-->
             </div>
-            <!--//col-->
         </div>
+    </div>
+            ';
+    }
+    ?>
 
-
-    </div><!-- /row-->
 
 </main>
 

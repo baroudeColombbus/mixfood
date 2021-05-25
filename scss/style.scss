@@ -6,6 +6,10 @@ $noir: #000;
 $jaune: #ffbb00;
 $gris: grey;
 
+.vert {
+    color: $success;
+}
+
 // variables de border radius
 $img_border_radius:             3rem;
 $border-radius-sm:            .2rem;
@@ -113,9 +117,7 @@ footer .icon-fb {
 }
 
 .fas .fa-plus-circle{
-
     font-size: $font_awesome;
-
 }
 
 // cacher apparaitre le formulaire de modification de profil
@@ -124,7 +126,6 @@ footer .icon-fb {
 }
 
 // information stat en cours profil administrateur
-
 .rad {
     border-radius: 15px;
 }

@@ -91,4 +91,8 @@ footer .icon-fb {
 .fas .fa-plus-circle {
   font-size: 3rem;
 }
+
+.cache {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

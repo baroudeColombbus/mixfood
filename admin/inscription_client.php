@@ -2,79 +2,55 @@
 
 include 'inc/init.php';
 
-////
-///
-//       TRAITEMENT DU FORMULAIRE D'INSCRIPTION
-// on initialise la variable message
-$message = " ";
-if (!empty($_POST)) {
+// $contenu est dans la page init.php
 
-    if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['nom'])) {
-        $message = '<div class="alert alert-danger">Le nom doit contenir entre 3 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
-    } // fin if !isset($_POST['nom']
+if (!empty($_POST)) { // Si des données sont en POST
+    jeprint_r($_POST);
+    // GESTION DES DONNEES POST ENVOYEES
+    if (!isset($_POST['mot_de_passe']) || strlen($_POST['mot_de_passe']) < 4 || strlen($_POST['mot_de_passe']) > 20) {
+        $contenu .= '<div class="alert alert-danger">Le mot de passe doit contenir entre 4 et 20 caractères.</div>';
+    } // fin du if isset mdp
 
-    if (!isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20 ||  !preg_match("/[a-zA-Z\S]+$/", $_POST['prenom'])) {
-        $message = '<div class="alert alert-danger">Le prenom doit contenir entre 3 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
-    } // fin if !isset($_POST['prenom']
+    if (!isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20) {
+        $contenu .= '<div class="alert alert-danger">Le nom doit contenir entre 2 et 20 caractères.</div>';
+    } // fin du if isset nom
+
+    if (!isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20) {
+        $contenu .= '<div class="alert alert-danger">Le prénom doit contenir entre 2 et 20 caractères.</div>';
+    } // fin du if isset prenom
 
     if (!isset($_POST['email']) || strlen($_POST['email']) > 50 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $message .= '<div class="alert alert-danger">Votre email n\'est pas conforme.</div>'; // filter_var -> filtre de variable // dans ce filtre on passe la fonction prédéfinie FILTER_VALIDATE_EMAIL (c'est une constante elle est écrite en MAJUSCULE) cette fonction vérifie que le format est bien de format email
-    } // fin if !isset($_POST['email']
+
+        $contenu .= '<div class="alert alert-danger">Votre email n\'est pas conforme.</div>'; // 
+    } // fin if !isset email
 
     if (!isset($_POST['telephone']) || !preg_match('#^[0-9]{10}$#', $_POST['telephone'])) {
-        $message .= '<div class="alert alert-danger">le numéro saisi n\'est pas valide.</div>'; // est ce que le code postal correspond à l'expression régulière : la "regex" regular 
-    } //  if (!isset($_POST['telephone'])
+        $message .= '<div class="alert alert-danger">le numéro saisi n\'est pas valide.</div>';
+    } //  if (!isset($_POST['telephone']) 
 
+    if (!isset($_POST['adresse']) || strlen($_POST['adresse']) < 6 || strlen($_POST['adresse']) > 50) {
+        $contenu .= '<div class="alert alert-danger">L\'adresse est elle complète?</div>';
+    } // fin du if isset adresse
 
-    if (!isset($_POST['mot_de_passe']) || strlen($_POST['mot_de_passe']) < 4 || strlen($_POST['mot_de_passe']) > 20) {
-        $message = '<div class="alert alert-danger">Le mot depasse doit contenir entre 4 et 20 caractères.</div>'; // si indice email inf à 4 caractère ou sup à 20 caractère on affiche ce message
-    } // fin if !isset($_POST['mot_de_passe']
+    if (!isset($_POST['code_postal']) || !preg_match('#^[0-9]{5}$#', $_POST['code_postal']) > 5) {
+        $contenu .= '<div class="alert alert-danger">Le code postal n\'est pas conforme.</div>';
+    } // fin du if isset code_postal
 
+    if (!isset($_POST['ville']) || strlen($_POST['ville']) < 1 || strlen($_POST['ville']) > 20) {
+        $contenu .= '<div class="alert alert-danger">La ville doit contenir entre 1 et 20 caractères.</div>';
+    } // fin du if isset ville
 
-    if (!isset($_POST['adresse']) || strlen($_POST['adresse']) < 6 || strlen($_POST['adresse']) > 60) {
-        $message = '<div class="alert alert-danger">L\' adresse est -elle complète ?.</div>'; // si indice adresse inf à 4 caractère ou sup à 20 caractère on affiche ce message
-    } // fin if !isset($_POST['adresse']
-
-    if (!isset($_POST['ville']) || strlen($_POST['ville']) < 1 || strlen($_POST['ville']) > 30) {
-        $message = '<div class="alert alert-danger">Vérifier le nom de votre ville ?.</div>'; // si indice adresse inf à 4 caractère ou sup à 20 caractère on affiche ce message
-    } // fin if !isset($_POST['ville']
-
-
-    if (!isset($_POST['code_postal']) || !preg_match('#^[0-9]{5}$#', $_POST['code_postal'])) {
-        $message .= '<div class="alert alert-danger">le code postal n\'est pas valide.</div>'; // est ce que le code postal correspond à l'expression régulière : la "regex" regular 
-    } //  if (!isset($_POST['code_postal'])
-
-
-    // ON UTILISE htmlspecialchars
-    // pour NETTOYER LES DONNEES INSERER PAR L UTILISATEUR
-    // ET PREMUIRE LES INJECTIONS SQL
-
-    $_POST['nom'] = htmlspecialchars($_POST['nom']);
-    $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
-    $_POST['email'] = htmlspecialchars($_POST['email']);
-    $_POST['telephone'] = htmlspecialchars($_POST['telephone']);
-    $_POST['mot_de_passe'] = md5(htmlspecialchars($_POST['mot_de_passe']));
-    $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
-    $_POST['ville'] = htmlspecialchars($_POST['ville']);
-    $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
-
-    if (empty($message)) { // si la variable est vide, c'est que tu n'a pas d'erreur
-        $utilisateur = executeRequete(
-            " SELECT * FROM utilisateur WHERE email = :email OR telephone = :telephone",
-            array(
-
-                ':email' => $_POST['email'],
-                ':telephone' => $_POST['telephone']
-
-            )
+    if (empty($contenu)) { // si la variable est vide c'est qu'il n'y a pas d'erreur sur le form
+        $membre = executeRequete(
+            " SELECT * FROM utilisateur WHERE email = :email",
+            array(':email' => $_POST['email'])
         );
 
+        if ($membre->rowCount() > 0) { // si la requête retourne des lignes c'est que le pseudo existe déjà
+            $contenu .= '<div class="alert alert-danger">Cet email n\'est pas disponible</div>';
+        } else { // si on inscrit le membre en BDD
+            $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // hachage du mdp
 
-        if ($utilisateur->rowCount() > 0) { // si la requête retourne des lignes c'est que l'adresse mail existe déjà
-            $message .= '<div class="alert alert-danger">Adresse email / téléphone déja utilisé. <a href=\"#\">Connectez-vous entant client</a></div>';
-        } else { // si on inscirt le utilisateur en BDD
-            $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // cette fonction prédéfinie permet de cripter le mot de passe selon l'algorithme actuel "bcrypt".  Il faudra lors de la connexion comparer le hash de la BDD avec celui du mot_de_passe de l'intérieur
-            // ici on insert les données dans la bdd 
             $succes = executeRequete(
                 " INSERT INTO utilisateur (nom,prenom, email, telephone, mot_de_passe,adresse, ville, code_postal,date_enregistrement,statut_utilisateur) VALUES (:nom, :prenom, :email, :telephone, :mot_de_passe, :adresse, :ville, :code_postal, now(), 'client')",
                 array(
@@ -82,156 +58,102 @@ if (!empty($_POST)) {
                     ':prenom'           => $_POST['prenom'],
                     ':email'            => $_POST['email'],
                     ':telephone'        => $_POST['telephone'],
-                    ':mot_de_passe'     => $_POST['mot_de_passe'], //on prend le mot de passe hashé
+                    ':mot_de_passe'     => $mot_de_passe, //on prend le mot de passe hashé
                     ':adresse'          => $_POST['adresse'],
                     ':ville'            => $_POST['ville'],
                     ':code_postal'      => $_POST['code_postal'],
 
                 )
             );
-            //////////
-            //          à finir la section
-            //
+
             if ($succes) {
-                $_SESSION['client'];
-                $message .= '<div class="alert alert-success">Vous êtes inscrit <a href="#">Cliquez ici pour vous connecter</a></div>';
+                $contenu .= '<div class="alert alert-success">Vous êtes inscrit <a href="02_connexion.php">Cliquez ici pour vous connecter</a></div>';
             } else {
-                $message .= '<div class="alert alert-danger">Erreur lors de l`\enregistrement !</div>';
-            } //fin du if if if ($succes)
-        } // fin de if else
-    } // empty($message
+                $contenu .= '<div class="alert alert-danger">Erreur lors de l`\enregistrement !</div>';
+            } //fin du if $success
+        } // fin du if ... else
+    } // fin empty $contenu
+} // fin du if !empty $_POST
 
-} // fin if !empty($_POST)
-
-//var_dump($mot_de_passe);
-
-
-// source possible https://grafikart.fr/tutoriels/gestion-utilisateur-229
-
-
-require_once 'inc/haut.php';
+include 'inc/haut.php';
 ?>
 
-<!-- container principal  -->
-<div class="container py-3 ">
-    <!-- row -->
+<!-- ********************************-->
+<!-- CONTENU PRINCIPAL -->
+<!-- ********************************-->
+<main class="container mx-auto ">
     <div class="row">
+        <div class="col-sm-12 mx-auto ">
+            <h1 class="text-center titreChoix text-white">MIXFOOD Inscrivez-vous !!!</h1>
+        </div><!-- Fin de col -->
+    </div><!-- Fin row -->
 
-        <div class="col-sm-12 col-md-6 ">
-            <?php echo "$message"; ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 mx-auto pb-4 ">
+            <?php
+            echo $contenu;
+            ?>
+            <!-- DEBUT DU FORMULAIRE -->
+            <form method="POST" action="" class=" row p-5 m-2 border border-dark alert alert-dark " id="formulaireInscription">
 
-            <h2 class="mb-5">Inscrivez-vous</h2>
-            <form method="POST" action="" class="row g-3  p-4 rounded-3 curve bg-info" id="formulaireInscription">
 
-                <div class="col-6 col-md-6 etoile">
-                    <label for="prenom" class="form-label ">Prénom</label>
-                    <input type="text" name="prenom" class="form-control " id="prenom" required="required">
+                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- nom -->
+                    <label for="nom" class="form-label">Nom de famille*</label>
+                    <input type="text" class="form-control text-right" name="nom" id="nom" value="<?php echo $_POST['nom'] ?? ''; ?>" required placeholder="Votre nom de famille">
                 </div>
-                <div class="col-6 col-md-6">
-                    <label for="nom" class="form-label">Nom</label>
-                    <input type="text" name="nom" class="form-control " id="nom" required>
+                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- prenom -->
+                    <label for="prenom" class="form-label">Prénom*</label>
+                    <input type="text " class="form-control text-right" name="prenom" id="prenom" value="<?php echo $_POST['prenom'] ?? ''; ?>" required placeholder="Votre prénom">
                 </div>
-
-                <div class="col-12">
-                    <label for="email" class="form-label">Email
-                    </label>
-                    <input type="email" name="email" class="form-control" id="email">
+                <div class="form-group p-2">
+                    <!-- mot_de_passe -->
+                    <label for="mot_de_passe" class="form-label">Mot de passe*</label>
+                    <input type="password" class="form-control text-right" name="mot_de_passe" id="mot_de_passe" required placeholder="Seul vous le connaissez">
+                    <small class='bg-dark text-white'>votre mot de passe doit contenir 4 à 20 caractères</small>
                 </div>
-                <div class="col-6 col-md-6">
+                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- mail -->
+                    <label for="email" class="form-label">Adresse éléctronique*</label>
+                    <input type="email" class="form-control text-right" name="email" id="email" value="<?php echo $_POST['email'] ?? ''; ?>" required placeholder="Votre email">
+                </div>
+                <div class=" form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- telephone -->
                     <label for="telephone" class="form-label">Téléphone</label>
-                    <input type="text" name="telephone" class="form-control" id="telephone">
+                    <input type="text" name="telephone" class="form-control" id="telephone" required placeholder="Votre numéro de téléphone">
                 </div>
-                <div class="col-6 col-md-6">
-                    <label for="mot_de_passe" class="form-label">Password</label>
-                    <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
+                <div class="form-group p-2">
+                    <!-- adresse -->
+                    <label for="adresse" class="form-label">Adresse postale*</label>
+                    <textarea name="adresse" id="adresse" class="form-control" required placeholder="Votre adresse"><?php echo $_POST['adresse'] ?? ''; ?></textarea>
                 </div>
-                <div class="col-12">
-                    <label for="adresse" class="form-label">Adresse</label>
-                    <input type="text" name="adresse" class="form-control" id="adresse" placeholder="Votre adresse">
+                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- code_postal -->
+                    <label for="code_postal" class="form-label">Code Postal*</label>
+                    <input type="text" class="form-control text-right" name="code_postal" id="code_postal" value="<?php echo $_POST['code_postal'] ?? ''; ?>" required placeholder="Votre code-postal">
                 </div>
-
-                <div class="col-6 col-md-6">
-                    <label for="ville" class="form-label">Ville</label>
-                    <input type="text" name="ville" class="form-control" id="ville">
-                </div>
-
-                <div class="col-6 col-md-2">
-                    <label for="code_postal" class="form-label">Code postal</label>
-                    <input type="text" name="code_postal" class="form-control" id="code_postal">
-                </div>
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
-                </div>
-                <div class="d-grid gap-2">
-                    <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
-
-                    <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
-
-                </div>
-                <div class="col-12">
-                    <p>
-                        Déja inscrit? <a href="#formulaireInscription">Sign in</a>
-                    </p>
-
+                <div class="form-group p-2 col-sm-12 col-md-6 col-lg-6">
+                    <!-- ville -->
+                    <label for="ville" class="form-label">Ville*</label>
+                    <input type="text" class="form-control" name="ville" id="ville" value="<?php echo $_POST['ville'] ?? ''; ?>" required placeholder="Votre ville">
                 </div>
 
-            </form> <!-- fin form  -->
+                <div class="form-group text-center">
+                    <!-- bouton reseat formulaire -->
+                    <button class="btn btn-dark mt-3" type="reset" value="Reset">Effacer</button>
 
-        </div><!-- /fin col -->
-
-        <!-- FORMULAIRE DE CONNECTION -->
-        <div class="col-sm-12 col-md-4 g-3 mx-auto">
-
-            <?php echo "$message"; ?>
-            <h2 class="mb-3">Déja inscrit</h2>
-
-            <form method="POST" action="" class="row  p-4 rounded-3 curve bg-info" id="formulaireInscription">
-
-
-                <div class="col-12">
-                    <label for="email" class="form-label">Email
-                    </label>
-                    <input type="email" name="email" class="form-control" id="formulaireInscription">
-                </div>
-
-                <div class="col-6 col-md-6">
-                    <label for="mot_de_passe" class="form-label">Password</label>
-                    <input type="password" name="mot_de_passe" class="form-control" id="mot_de_passe">
-                </div>
-
-                <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
-                </div>
-                <div class="d-grid gap-2">
-                    <!-- <button type="submit" class="btn btn-primary">Valider</button> -->
-
-                    <button class="btn btn-primary" type="submit" name="register_btn">Valider</button>
+                    <!-- bouton envoyer -->
+                    <button type="submit" class="btn btn-success mt-3">S'inscrire</button>
 
                 </div>
+            </form> <!-- fin de formulaire -->
+        </div><!-- Fin de col -->
+    </div><!-- Fin de row -->
 
 
-            </form> <!-- fin form  -->
-
-        </div><!-- / fin col -->
-
-    </div><!-- row -->
-
-
-
-</div><!-- / fin container -->
+</main><!-- Fin container -->
 
 <?php
-require_once 'inc/bas.php';
-
-
+include 'inc/bas.php';
 ?>

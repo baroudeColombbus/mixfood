@@ -17,7 +17,7 @@ require_once 'inc/haut.php';
                 <th>ID</th>
                 <th>Categorie</th>
                 <th>Image</th>
-                <th>en_vedette</th>
+                <th>Produit vedette</th>
                 <th>Disponible</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>

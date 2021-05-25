@@ -74,13 +74,13 @@ if (!empty($_POST)) {
 
     if ($requete  == TRUE) {
         // cQuery executed correctly and data added to the database
-        $_SESSION['add'] =  " <div class=\"alert alert-success row col-col-4\">Category Successfully Added</div>"; // create a new section called 'add'
+        $_SESSION['ajouter_cat'] =  " <div class=\"alert alert-success row col-col-4\">Catégorie ajouter avec succès</div>"; // create a new section called 'add'
 
         header('location:' . SITEURL . 'admin/gestion_categorie.php');
         exit;
     } else {
         //Failed to add category
-        $_SESSION['add'] = "<div class=\"alert alert-success row col-col-4\">Category Failed to  Added</div>";
+        $_SESSION['ajouter_cat'] = "<div class=\"alert alert-success row col-col-4\">Erreur ! laCatégorie n'a pas été ajouter</div>";
 
         header('location:' . SITEURL . 'admin/ajouter_categorie.php');
         exit;
@@ -122,8 +122,6 @@ if (!empty($_POST)) {
                             <label class="form-check-label" for="m">non</label>
                         </div>
                     </div>
-
-
 
                     <div class="form-group mb-3">
                         <label for="disponible">Disponibilité </label>

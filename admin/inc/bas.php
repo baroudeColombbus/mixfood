@@ -59,7 +59,7 @@
                     <h6 class="text-uppercase text-center mb-4 font-weight-bold">Suivez-nous</h6>
 
                     <!-- Facebook -->
-                    <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb"></i></a></p>
+                    <p class="text-center text-md-left mt-5"><a href="#"><i class=" fab fa-facebook fa-5x icon-fb success"></i></a></p>
 
                 </div>
             </div>
@@ -80,8 +80,6 @@
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-
-
 
 </body>
 

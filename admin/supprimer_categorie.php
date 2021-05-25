@@ -15,8 +15,8 @@ if (!empty($_GET['id'])) { // does take into account possible sql injection scen
 
     //on prépare la requête sql pour supprimer
 $sql = $pdoSITE->prepare(" DELETE
-                            FROM produit
-                            WHERE  	id_produit= :id");
+                            FROM produit_categorie
+                            WHERE  	id_categorie= :id");
 
 $sql->bindValue(':id', $id);
 
@@ -35,12 +35,12 @@ if ($sql ==  TRUE) {
     $_SESSION['supprimer'] =  " <div class=\"alert alert-success row col-col-6\"> La catégorie à bien été supprimer </div>";
 
     //On redirect vers la page gestion_catgorie 
-    header('location: ' . SITEURL . 'admin/gestion_produit.php');
+    header('location: ' . SITEURL . 'admin/gestion_categorie.php');
 } else {
 
     // On redirect vers la meme paage
     $_SESSION['supprimer'] = "La Categorie n'a pa été supprimer. Essayer encore";
-    header('location: ' . SITEURL . 'admin/supprimer_produit.php');
+    header('location: ' . SITEURL . 'admin/supprimer_categorie.php');
 }
 
 // include bas

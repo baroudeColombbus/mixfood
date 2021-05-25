@@ -45,20 +45,20 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item active">
-                        <a class="nav-link m-4" href="../index.php">MIXFOOD</a>
+                        <a class="nav-link m-4 espace" href="../index.php">MIXFOOD</a>
                     </li>
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle m-4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <a class="nav-link dropdown-toggle m-4 espace" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                         <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="../pizza.html">Pizza</a></li>
-                            <li><a class="dropdown-item" href="../sushi.html">Sushi</a></li>
+                            <li><a class="dropdown-item espace" href="../pizza.html">Pizza</a></li>
+                            <li><a class="dropdown-item espace" href="../sushi.html">Sushi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4" href="#">Qui sommes-nous ?</a>
+                        <a class="nav-link m-4 espace" href="#">Qui sommes-nous ?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4" href="../contact.php">Contact</a>
+                        <a class="nav-link m-4 espace" href="../contact.php">Contact</a>
                     </li>
                 </ul>
 
@@ -70,17 +70,17 @@
             // visible pour les administrateurs
             if (estAdmin()) {
                 echo '<ul class="navbar-nav align-items-center">';
-                echo '<li class="nav-item"><a class="nav-link lienBlanc" href="manage_utilisateur_client.php">ADMIN</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc" href="gestion_produit.php">Produit</a></li>';
-                echo '<li class=" nav-item"><a class="nav-link lienBlanc" href="#">Commande</a></li></ul>';
+                echo '<li class="nav-item"><a class="nav-link lienBlanc espace" href="manage_utilisateur_client.php">ADMIN</a></li>';
+                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="gestion_produit.php">Produit</a></li>';
+                echo '<li class=" nav-item"><a class="nav-link lienBlanc espace" href="#">Commande</a></li></ul>';
             }
 
             if (estConnecte()) { // si membre utilisateur connecté
-                echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc" href="profil_client.php">Profil</a></button>';
-                echo '<button class="btn btn-success nav-item"><a class="nav-link lienBlanc" href="profil_client.php?action=deconnexion">Se déconnecter</a></button>';
+                echo '<button class="btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="profil_client.php">Profil</a></button>';
+                echo '<button class="btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="profil_client.php?action=deconnexion">Déconnexion</a></button>';
             } else { //sinon
-                echo '<button class=" btn btn-success nav-item m-2"><a class="nav-link lienBlanc" href="inscription_client2.php">Inscription</a></button>';
-                echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc" href="connexion_client2.php">Connexion</a></button>';
+                echo '<button class=" btn btn-success nav-item m-2"><a class="nav-link lienBlanc espace" href="inscription_client2.php">Inscription</a></button>';
+                echo '<button class=" btn btn-success nav-item"><a class="nav-link lienBlanc espace" href="connexion_client2.php">Connexion</a></button>';
             }
             ?>
 

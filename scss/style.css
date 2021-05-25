@@ -1,5 +1,10 @@
 p {
   color: #ece6e6;
+  letter-spacing: 2px;
+}
+
+.espace {
+  letter-spacing: 2px;
 }
 
 .titreChoix {
@@ -40,7 +45,16 @@ nav li:hover {
 
 .lienBlanc {
   color: #ece6e6;
+}
+
+.lienBlanc:hover {
+  color: #ece6e6;
   text-decoration: none;
+  font-weight: bold;
+}
+
+a.liVert:active {
+  background-color: #157347;
 }
 
 .carousselAccueil img {

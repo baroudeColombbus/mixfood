@@ -23,11 +23,15 @@ include 'inc/haut.php';
                 </div>
             </div>
             <textarea class="form-control mb-4" id="comments" name="comments" placeholder="Votre message" rows="5"></textarea>
-            <div class="row">
-                <button class="btn btn-success border border-light mr-1 mb-1 mx-auto boutonNav col-sm-3" id="btn-envoyer">Envoyer</button>
+
+            <div class="col">
+                <button class="btn btn-success border border-light mr-1 mb-1 mx-auto col-sm-3 float-end" id="btn-envoyer">Envoyer</button>
             </div>
         </div>
     </div> <!-- fin de row-->
+    <div class="col mx-auto text-center mt-4 map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8645312510744!2d2.211644869512095!3d48.860793583226375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664cb18235a55%3A0x21fc823972e9be9c!2sCoton%20Fabrice!5e0!3m2!1sfr!2sfr!4v1621975926145!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
 </div> <!-- fin de container-->
 <?php
 include 'inc/bas.php';

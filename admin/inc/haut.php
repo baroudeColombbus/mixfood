@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4 espace" href="#">Qui sommes-nous ?</a>
+                        <a class="nav-link m-4 espace" href="../about.php">Qui sommes-nous ?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link m-4 espace" href="../contact.php">Contact</a>

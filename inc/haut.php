@@ -55,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4 espace " href="#">Qui sommes-nous ?</a>
+                        <a class="nav-link m-4 espace " href="about.php">Qui sommes-nous ?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link m-4 espace" href="contact.php">Contact</a>
@@ -65,7 +65,7 @@
 
             </div>
         </div>
-        <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-end navbar-collapse collapse ">
+        <div class="container col-sm-11 col-md-6 col-lg-3 mx-auto justify-content-center navbar-collapse collapse ">
             <?php
 
             // visible pour les administrateurs

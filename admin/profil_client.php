@@ -6,7 +6,6 @@ require_once 'inc/init.php';
 // Connexion obligatoire pour accéder à la page profil
 if (!estConnecte()) {
     header('location:connexion_client2.php'); // renvoie à la page de connexion
-
 }
 
 // Gestion de l'affichage des informations clients
@@ -20,9 +19,7 @@ if (estConnecte()) {
         header('location:profil_client.php');
         exit();
     } // fin du if
-
     $fiche = $resultat->fetch(PDO::FETCH_ASSOC);
-
     // jeprintr($fiche);
 } else {
     header('location:profil_client.php'); // 
@@ -31,7 +28,6 @@ if (estConnecte()) {
 
 // Déconnexion de l'internaute
 // jeprint_r($_GET);
-
 if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
     unset($_SESSION['utilisateur']);
     // $message = '<div class="alert alert-primary">Vous êtes déconnecté.</div>';
@@ -40,7 +36,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
 
 // Gestion de la modification de profil
 if (!empty($_POST)) { // Si des données sont en POST
-    jevardump($_POST);
+    // jevardump($_POST);
     // GESTION DES DONNEES POST ENVOYEES
 
     if (!isset($_POST['email']) || strlen($_POST['email']) > 50 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -64,8 +60,8 @@ if (!empty($_POST)) { // Si des données sont en POST
         $contenu .= '<div class="alert alert-danger">La ville doit contenir entre 1 et 20 caractères.</div>';
     } // fin du if isset ville
 
-    // gérer les modifications de la fiche employée
-    if (!empty($_POST)) {
+    // gérer les modifications de le profil
+    if (empty($contenu)) {
         // proteger les champs de saisies
         $_POST['nom'] = htmlspecialchars($_POST['nom']);
         $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
@@ -75,9 +71,9 @@ if (!empty($_POST)) { // Si des données sont en POST
         $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
         $_POST['telephone'] = htmlspecialchars($_POST['telephone']);
         // preparer la requete
-        $resultat = $pdoSITE->prepare("UPDATE utilisateur SET id_utilisateur = :id_utilisateur, nom = :nom,  prenom = :prenom, email = :email, code_postal = :code_postal, ville = :ville, adresse = :adresse, telephone = :telephone  WHERE id_utilisateur = :id_utilisateur");
+        $succes = $pdoSITE->prepare("UPDATE utilisateur SET id_utilisateur = :id_utilisateur, nom = :nom,  prenom = :prenom, email = :email, code_postal = :code_postal, ville = :ville, adresse = :adresse, telephone = :telephone  WHERE id_utilisateur = :id_utilisateur");
         // executer la requete avec l'indication des marqueurs
-        $resultat->execute(array(
+        $succes->execute(array(
 
             ':nom' => $_POST['nom'],
             ':prenom' => $_POST['prenom'],
@@ -89,19 +85,14 @@ if (!empty($_POST)) { // Si des données sont en POST
             ':id_utilisateur' => $_SESSION['utilisateur']['id_utilisateur'],
 
         ));
-        header('location:profil_client.php'); // RETOUR A cette page
-        echo 'Profil modifié';
-        exit(); // fin de script
+
+        if ($succes) {
+            $contenu .= '<div class="alert alert-success">Votre profil est modifié</div>';
+        } else {
+            $contenu .= '<div class="alert alert-danger">Erreur lors de la modification !</div>';
+        }
     } // fin du if empty
-
-
-    if ($succes) {
-        $contenu .= '<div class="alert alert-success">Votre profil est modifié <a href="connexion_client2.php">Cliquez ici pour vous connecter</a></div>';
-    } else {
-        $contenu .= '<div class="alert alert-danger">Erreur lors de la modification !</div>';
-    }
 }
-
 
 include 'inc/haut.php';
 ?>
@@ -119,7 +110,10 @@ include 'inc/haut.php';
 
     <?php
     echo $message;
-
+    ?>
+    <?php
+    // pourquoi le contenu ne s'affiche pas???
+    echo $contenu;
     ?>
 
     <div class="col-12 row">
@@ -128,6 +122,7 @@ include 'inc/haut.php';
             <h2 class="text-white text-center">Bonjour <?php echo $fiche['prenom']; ?> !</h2>
 
             <hr>
+
 
             <div class="card mx-auto alert alert-success">
                 <div class="card-body ">
@@ -197,10 +192,7 @@ include 'inc/haut.php';
 
     <div class="col-12 mx-auto m-2 p-2 cache">
         <h2 class=" text-white text-center">Modifier votre profil</h2>
-        <?php
-        // pourquoi le contenu ne s'affiche pas???S
-        echo $contenu;
-        ?>
+
         <hr>
         <!-- DEBUT DU FORMULAIRE -->
         <form method="POST" action="" class=" row p-5 m-2 border border-success alert alert-success " id="formulaireModification">
@@ -256,6 +248,76 @@ include 'inc/haut.php';
         </form> <!-- fin de formulaire -->
     </div> <!-- fin col-12 -->
 
+    <!-- information stat de la bdd coté ADMIN-->
+    <div class="row">
+        <!-- row-->
+        <div class="row g-4 mb-4 m-auto">
+            <div class="col-6 col-lg-3">
+                <div class="card h-100 rad">
+                    <div class="card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Total Sales</h4>
+                        <div class="stats-figure">$12,628</div>
+                        <div class="stats-meta text-success">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"></path>
+                            </svg> 20%
+                        </div>
+                    </div>
+                    <!--//card-body-->
+                    <a class="card-link-mask" href="#"></a>
+                </div>
+                <!--//card-->
+            </div>
+            <!--//col-->
+
+            <div class="col-6 col-lg-3">
+                <div class="card rad h-100">
+                    <div class="card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Expenses</h4>
+                        <div class="stats-figure">$2,250</div>
+                        <div class="stats-meta text-success">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"></path>
+                            </svg> 5%
+                        </div>
+                    </div>
+                    <!--//card-body-->
+                    <a class="card-link-mask" href="#"></a>
+                </div>
+                <!--//card-->
+            </div>
+            <!--//col-->
+            <div class="col-6 col-lg-3">
+                <div class="card rad h-100">
+                    <div class="card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Projects</h4>
+                        <div class="stats-figure">23</div>
+                        <div class="stats-meta">
+                            Open</div>
+                    </div>
+                    <!--//card-body-->
+                    <a class="card-link-mask" href="#"></a>
+                </div>
+                <!--//card-->
+            </div>
+            <!--//col-->
+            <div class="col-6 col-lg-3">
+                <div class="card rad h-100">
+                    <div class="card-body p-3 p-lg-4">
+                        <h4 class="stats-type mb-1">Invoices</h4>
+                        <div class="stats-figure">6</div>
+                        <div class="stats-meta">New</div>
+                    </div>
+                    <!--//card-body-->
+                    <a class="card-link-mask" href="#"></a>
+                </div>
+                <!--//card-->
+            </div>
+            <!--//col-->
+        </div>
+
+
+    </div><!-- /row-->
 
 </main>
 

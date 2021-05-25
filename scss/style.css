@@ -95,4 +95,22 @@ footer .icon-fb {
 .cache {
   display: none;
 }
+
+.rad {
+  border-radius: 15px;
+}
+
+.food-menu-img {
+  width: 20%;
+}
+
+.card:hover {
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+}
+
+.card-shaw {
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+}
 /*# sourceMappingURL=style.css.map */

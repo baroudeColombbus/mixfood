@@ -50,8 +50,8 @@
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle m-4 espace" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                         <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item espace" href="../pizza.html">Pizza</a></li>
-                            <li><a class="dropdown-item espace" href="../sushi.html">Sushi</a></li>
+                            <li><a class="dropdown-item espace liVert" href="../pizza.php">Pizza</a></li>
+                            <li><a class="dropdown-item espace liVert" href="../sushi.php">Sushi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

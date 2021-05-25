@@ -82,6 +82,18 @@ a.liVert:active {
     background-color: $success;
 }
 
+:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    transition: none;
+}
+
+// ne fonctionne pas, trouver comment cibler la couleur de la flecje active de l'accordion
+.accordion-button::after {
+    color: rgb(255, 0, 0);
+}
+
+
 // caroussel
 .carousselAccueil img {
     width: 100%;

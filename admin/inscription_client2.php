@@ -67,7 +67,7 @@ if (!empty($_POST)) { // Si des données sont en POST
             );
 
             if ($succes) {
-                $contenu .= '<div class="alert alert-success">Vous êtes inscrit <a href="02_connexion.php">Cliquez ici pour vous connecter</a></div>';
+                $contenu .= '<div class="alert alert-success">Vous êtes inscrit <a href="connexion_client2.php">Cliquez ici pour vous connecter</a></div>';
             } else {
                 $contenu .= '<div class="alert alert-danger">Erreur lors de l`\enregistrement !</div>';
             } //fin du if $success

@@ -35,37 +35,46 @@ if (!empty($_POST)) {
     if (isset($_FILES['nom_image']['name'])) {
 
         $nom_image = htmlspecialchars($_FILES['nom_image']['name']); //nom_image
+        // upload image only if selected
+        if($nom_image != "") {
 
-        // auto rename OUR image
-        // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
-        $tmp = explode('.', $nom_image);
-        $file_extension = end($tmp);
 
-        // renomme les images
-        $nom_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
+            // auto rename OUR image
+            // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
+            $tmp = explode('.', $nom_image);
+            $file_extension = end($tmp);
 
-        $source_path = $_FILES['nom_image']['tmp_name']; // source path (source du fichier)
-        //var_dump($source_path);
-        $destination_path = "../img/categorie/" . $nom_image; // destination path (destination du fichier)
+            // renomme les images
+            $nom_image = "Produit_categorie_" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
 
-        // Now we can Upload the file( on televerse cette image de la source at le destination)
-        $upload = move_uploaded_file($source_path, $destination_path);
+            $source_path = $_FILES['nom_image']['tmp_name']; // source path (source du fichier)
+            //var_dump($source_path);
+            $destination_path = "../img/categorie/" . $nom_image; // destination path (destination du fichier)
 
-        if ($upload == false) {
-            // SET message
-            $_SESSION['upload'] = "<div class=\"alert alert-danger\">Image Failed to  upload</div>";
-            // redirect to add Category page
-            header('location:' . SITEURL . 'Admin/ajouter_categorie.php');
-            // STOP 
-            die();
+            // Now we can Upload the file( on televerse cette image de la source at le destination)
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            if ($upload == false) {
+                // SET message
+                $_SESSION['upload'] = "<div class=\"alert alert-danger\">Image Failed to  upload</div>";
+                // redirect to add Category page
+                header('location:' . SITEURL . 'Admin/ajouter_categorie.php');
+                // STOP 
+                die();
+            }
         }
+
     } else {
 
         $nom_image = "";
     }
 
     // 2. On prepare la requête sql . Les données seront persister des que le bouton submit est activé
-    $sql = $pdoSITE->prepare("INSERT INTO produit_categorie SET nom_categorie ='$nom_categorie', nom_image ='$nom_image', en_vedette='$en_vedette',disponible='$disponible' ");
+    $sql = $pdoSITE->prepare("INSERT INTO produit_categorie 
+                            SET nom_categorie ='$nom_categorie',
+                                nom_image ='$nom_image',
+                                en_vedette='$en_vedette',
+                                disponible='$disponible' ");
 
 
     // On execute la requête
@@ -77,13 +86,13 @@ if (!empty($_POST)) {
         $_SESSION['ajouter_cat'] =  " <div class=\"alert alert-success row col-col-4\">Catégorie ajouter avec succès</div>"; // create a new section called 'add'
 
         header('location:' . SITEURL . 'admin/gestion_categorie.php');
-        exit;
+        exit();
     } else {
         //Failed to add category
         $_SESSION['ajouter_cat'] = "<div class=\"alert alert-success row col-col-4\">Erreur ! laCatégorie n'a pas été ajouter</div>";
 
         header('location:' . SITEURL . 'admin/ajouter_categorie.php');
-        exit;
+        exit();
     }
 }
 

@@ -67,13 +67,13 @@ require_once 'inc/haut.php';
 
                     if ($produit_image  != '') {
                     ?>
-                        <img src="<?php echo SITEURL; ?>img/categorie/<?php echo $produit_image; ?>" width="100px">
+                        <img src="<?php echo SITEURL; ?>img/produit/<?php echo $produit_image; ?>" width="100px">
 
 
                     <?php
 
                     } else {
-                        echo  "<div class=\"alert alert-warning row col-col-4\">Image not Added</div>";
+                        echo  "<div class=\"alert alert-warning row col-col-4\">Image n'a pas été télécharger</div>";
                     }
 
                     ?>
@@ -83,8 +83,8 @@ require_once 'inc/haut.php';
                 echo " <td>" . $row['produit_prix'] . "</td>";
                 echo "<td>" . $row['produit_vedette'] . "</td>";
                 echo "<td>" . $row['produit_disponible'] . "</td>";
-                echo "<td> <a href=\"modifier_produit.php?id=" . $row['id_produit'] . "\" class=\"btn btn-warning \">Modifier le produit</a></td>";
-                echo "<td> <a href=\"supprimer_produit.php?id=" . $row['id_produit'] . "\" class=\"btn btn-info \">Supprimer le produit</a></td>";
+                echo "<td> <a href=\"modifier_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-warning \">Modifier le produit</a></td>";
+                echo "<td> <a href=\"supprimer_produit.php?id_produit=" . $row['id_produit'] . "\" class=\"btn btn-info \">Supprimer le produit</a></td>";
                 echo    "<tr>";
             }
             ?>

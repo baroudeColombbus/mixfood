@@ -42,29 +42,32 @@ if (!empty($_POST)) {
 
         $produit_image = htmlspecialchars($_FILES['produit_image']['name']); //produit_image
 
-        // auto rename OUR image
-        // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
-        $tmp = explode('.', $produit_image);
-        $file_extension = end($tmp);
+        if($produit_image != ""){
 
-        // renomme les images
-        $produit_image = "Produit_mixfood" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
+            // auto rename OUR image
+            // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
+            $tmp = explode('.', $produit_image);
+            $file_extension = end($tmp);
 
-        $source_path = $_FILES['produit_image']['tmp_name']; // source path (source du fichier)
-        //var_dump($source_path);
-        $destination_path = "../img/produit/" . $produit_image; // destination path (destination du fichier)
+            // renomme les images
+            $produit_image = "Produit_mixfood" . rand(000, 999) . '.' . $file_extension; // e.g => Food_category_232.jpg
 
-        // Now we can Upload the file( on televerse cette image de la source at le destination)
-        $upload = move_uploaded_file($source_path, $destination_path);
+            $source_path = $_FILES['produit_image']['tmp_name']; // source path (source du fichier)
+            //var_dump($source_path);
+            $destination_path = "../img/produit/" . $produit_image; // destination path (destination du fichier)
 
-        if ($upload == false) {
-            // SET message
-            $_SESSION['upload'] = "<div class=\"alert alert-danger\">Image Failed to  upload</div>";
-            // redirect to add Category page
-            header('location:' . SITEURL . 'Admin/ajouter_produit.php');
-            // STOP 
-            die();
-        }
+            // Now we can Upload the file( on televerse cette image de la source at le destination)
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            if ($upload == false) {
+                // SET message
+                $_SESSION['upload'] = "<div class=\"alert alert-danger\">Image Failed to  upload</div>";
+                // redirect to add Category page
+                header('location:' . SITEURL . 'Admin/ajouter_produit.php');
+                // STOP 
+                die();
+            }
+    }
     } else {
 
         $produit_image = "";
@@ -97,7 +100,7 @@ require_once 'inc/haut.php';
 ?>
 
 <div class="container m-auto">
-    <div class="row">
+    <div class="row"><!-- début row -->
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">

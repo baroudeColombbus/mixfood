@@ -8,20 +8,20 @@ require_once 'inc/haut.php';
 
 
 
-if (!empty($_GET['id'])) { // does take into account possible sql injection scenario
+if (!empty($_GET['id_categorie'])) { // does take into account possible sql injection scenario
 
 
-    $id = $_GET['id'];
+    $id = $_GET['id_categorie'];
 
     //on prépare la requête sql pour supprimer
 $sql = $pdoSITE->prepare(" DELETE
                             FROM produit_categorie
-                            WHERE  	id_categorie= :id");
+                            WHERE  	id_categorie= :id_categorie");
 
-$sql->bindValue(':id', $id);
+$sql->bindValue(':id_categorie', $id);
 
 // on execute la requete sql 
-$sql->execute([':id' => $id]);
+$sql->execute([':id_categorie' => $id]);
 
 
    

@@ -154,8 +154,9 @@ include 'inc/haut.php';
         <?php
         if (estAdmin()) {
             echo '
-            <div class="col-sm-12 col-md-6 col-lg-6 m-auto row text-center mt-4" id="sectionR2">
-            <div class="dropdown col mb-3">
+            <div class="col-sm-12 col-md-6 col-lg-6  row text-center mt-4" id="sectionR2">
+            <h2 class="text-center text-white"> Actions </h2>
+            <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Utilisateur
                 </button>
@@ -165,7 +166,7 @@ include 'inc/haut.php';
                     <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="dropdown col mb-3">
+            <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     Catégories
                 </button>
@@ -175,7 +176,7 @@ include 'inc/haut.php';
                     <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="dropdown col mb-3">
+            <div class="dropdown col-md-6 mb-3">
                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                     Produit
                 </button>
@@ -185,7 +186,7 @@ include 'inc/haut.php';
                     <li><a class="dropdown-item liVert" href="#">Supprimer</a></li>
                 </ul>
             </div>
-            <div class="col mb-2">
+            <div class="col-md-6 mb-23">
                 <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Commande</a>
             </div>
         </div>';

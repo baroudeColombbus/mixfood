@@ -1,11 +1,10 @@
-<!-- Remove the container if you want to extend the Footer to full width. -->
-
 <!-- Footer -->
+
 <footer class="text-center text-lg-start text-white container-fluid bg-dark">
     <!-- Grid container -->
     <div class="container-fluid pt-3">
         <!-- Section: Links -->
-        <section class="">
+        <section class="col">
             <!--Grid row-->
             <div class="row">
                 <!-- Grid column -->

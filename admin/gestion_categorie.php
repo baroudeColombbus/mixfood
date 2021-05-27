@@ -22,6 +22,17 @@ require_once 'inc/haut.php';
         unset($_SESSION['ajouter_cat']);
     }
 
+    // on active la session 
+    if(isset( $_SESSION['telecharger'] )){
+        echo  $_SESSION['telecharger'];
+        unset( $_SESSION['telecharger']);
+    }
+
+    if(isset($_SESSION['actualiser'])){
+        echo $_SESSION['actualiser'];
+        unset($_SESSION['actualiser']);
+    }
+
 
     ?>
 
@@ -99,8 +110,8 @@ require_once 'inc/haut.php';
         <?php
                 echo "<td>" . $row['en_vedette'] . "</td>";
                 echo "<td>" . $row['disponible'] . "</td>";
-                echo "<td> <a href=\"modifier_categorie.php?id=" . $row['id_categorie'] . "\" class=\"btn btn-warning \">Modifier la gategorie</a></td>";
-                echo "<td> <a href=\"supprimer_categorie.php?id=" . $row['id_categorie'] . "\" class=\"btn btn-info \">Supprimer la gategorie</a></td>";
+                echo "<td> <a href=\"modifier_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-warning \">Modifier la gategorie</a></td>";
+                echo "<td> <a href=\"supprimer_categorie.php?id_categorie=" . $row['id_categorie'] . "\" class=\"btn btn-info \">Supprimer la gategorie</a></td>";
                 echo    "<tr>";
             }
         ?>

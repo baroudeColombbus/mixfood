@@ -47,15 +47,11 @@
                     <li class="nav-item active">
                         <a class="nav-link m-4 espace" href="index.php">MIXFOOD</a>
                     </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle m-4 espace" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item espace liVert" href="pizza.php">Pizza</a></li>
-                            <li><a class="dropdown-item espace liVert" href="sushi.php">Sushi</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link m-4 espace " href="pizza.php">Nos pizza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-4 espace " href="about.php">Qui sommes-nous ?</a>
+                        <a class="nav-link m-4 espace " href="sushi.php">Nos sushi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link m-4 espace" href="contact.php">Contact</a>

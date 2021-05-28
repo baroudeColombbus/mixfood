@@ -104,7 +104,7 @@ require_once 'inc/haut.php';
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">
-                <h2 class="bg-warning p-4 text-center mb-5">Entréz votre produit</h2>
+                <h2 class="bg-warning p-4 text-center mb-5">Nouveau produit</h2>
                 <!-- début de formulaire -->
                 <form method="POST" action="" enctype="multipart/form-data" class="">
 

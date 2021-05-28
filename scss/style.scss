@@ -1,0 +1,187 @@
+// variable de couleurs
+$rouge: rgb(204, 22, 22);
+$blanc: rgb(236, 230, 230);
+$success: #157347;
+$noir: #000;
+$jaune: #ffbb00;
+$gris: grey;
+
+.vert {
+    color: $success;
+}
+
+// variables de border radius
+$img_border_radius:             3rem;
+$border-radius-sm:            .2rem;
+$border-radius-lg:            .3rem;
+$border-radius-pill:          50rem;
+
+// font size pour les font awesome 
+$font_awesome: 3rem;
+
+
+p, h1 {
+    color: $blanc;
+    letter-spacing: 2px;
+}
+
+.espace {
+    letter-spacing: 2px;
+}
+
+// typographie écriture manuscrite
+.titreChoix {
+    font-family: 'Give You Glory', cursive;
+    font-size: 5em;
+}
+
+.typoChoix {
+    font-family: 'Give You Glory', cursive;
+    font-size: 2em;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: $gris;
+}
+
+// navbar
+nav.centrer {
+    display: block;
+    margin: 0 auto;
+}
+
+nav li .centra {
+    text-align: center;
+}
+
+nav a {
+padding: 2em;
+}
+
+nav a:hover {
+    color: $blanc;
+}
+
+nav li:hover {
+    background-color: $success;
+}
+
+// les liens
+.lienVert {
+        color: $success;
+        text-decoration: none;
+}
+
+.lienBlanc {
+    color: $blanc;
+}
+
+.lienBlanc:hover {
+    color: $blanc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.liVert:active {
+    background-color: $success;
+}
+
+:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    transition: none;
+}
+
+// ne fonctionne pas, trouver comment cibler la couleur de la flecje active de l'accordion
+.accordion-button::after {
+    color: rgb(255, 0, 0);
+}
+
+
+// caroussel
+.carousselAccueil img {
+    width: 100%;
+    max-height: 700px;
+}
+
+// footer
+footer a {
+    color: $success;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: $rouge;
+}
+
+footer .icon-fb {
+    color: $success;
+}
+
+// les images
+.produit-menu-img{
+    width: 20%;
+    float: left;
+  }
+  
+.img-curvy{
+    border-radius: $img_border_radius;
+}
+
+.curve{
+    border-radius: $img_border_radius;
+}
+
+.fas .fa-plus-circle{
+    font-size: $font_awesome;
+}
+
+// cacher apparaitre le formulaire de modification de profil
+.cache {
+    display: none;
+}
+
+// information stat en cours profil administrateur
+.rad {
+    border-radius: 15px;
+}
+.food-menu-img{
+    width: 20%;
+}
+
+.card:hover{
+    -webkit-box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.65); 
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.65);
+            }
+
+.card-shaw{
+    -webkit-box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.65); 
+    box-shadow: 1px 5px 15px 5px rgba(0,0,0,0.65);
+}
+
+// changer l'ordre des sections responsive page profil
+@media screen and (max-width: 768px)
+{
+  #blocResponsive {
+    display:flex;
+    flex-flow:column;
+  }
+  div#sectionR2 {order:-1;}
+}
+
+// map responsive page contact
+.map-responsive {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+
+.map-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }

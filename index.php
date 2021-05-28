@@ -1,48 +1,59 @@
-<!doctype html>
-<html lang="fr">
+<?php
+include 'inc/init.php';
+$sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie  WHERE disponible='oui' AND en_vedette ='oui' ");
+//execute the sql statement as an object NOT an array
+// on execute la requte sql 
+$sql->execute();
+// fetch all, récuperer toutes les entrées de données par default PDO::FETCH_BOTH est utilisé
+$result =   $sql->fetchAll();
+// count le nombre de catégorie présent dans la bdd
+$nbr_categorie =  $sql->rowCount();
+//var_dump($nbr_categorie);
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+//////////  AFFICHAGE DES PLATS / SUSHI ET PIZZA  ////////////////
+// Query to get all Categories from database
+$sql2 =  $pdoSITE->prepare("SELECT * FROM produit WHERE produit_vedette='oui' AND produit_disponible ='oui'");
+//execute the sql statement as an object NOT an array
+$sql2->execute();
+// fetch all rows into array, by default PDO::FETCH_BOTH is used
+$result2 =   $sql2->fetchAll();
+//var_dump($result);
+// count the number of admin in the database
+$nbr_food =      $sql2->rowCount();
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-    <!-- normalize -->
-    <link rel="stylesheet" href="css/normalize.css">
+include 'inc/haut.php';
+include 'inc/diaporama.php';
 
-    <!-- Les styles -->
-    <link rel="stylesheet" href="css/style.css">
+?>
 
-    <!-- Les typographies -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@500&family=Stylish&display=swap" rel="stylesheet">
-
-    <title>MIXFOOD</title>
-
-</head>
-
-<body>
+<!-- /container principal -->
+<div class="container m-auto">
+    <h2 class="text-center mt-4 text-light titreChoix"> Pourquoi choisir ? ...</h2>
     <?php
-    include 'inc/navbar.php';
+    if ($nbr_categorie > 0) {
+        // there are record in the database
+        echo ' <div class="row">';
+        foreach ($result as $row) {
+            $id_categorie = $row['id_categorie'];
+            $nom_categorie = $row['nom_categorie'];
+            $nom_image  = $row['nom_image'];
+
+            echo ' <div class="col-6 mt-3  text-center mb-5">';
+            if ($nom_image == '') {
+                // Display an error message 
+                echo 'image NOT found';
+            } else {
+                // Display the image
+                echo '<img src="' . SITEURL . 'img/categorie/' . $nom_image . '" class="img-curvy img-thumbnail img-responsive" width="50%" height="50%" style="background-color:#28a745; border-color:#28a745;"></div>';
+            }
+        }
+        echo '</div>';
+    }
     ?>
 
+</div><!-- /fin container principal -->
 
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
-    -->
-</body>
-
-</html>
+<?php
+include 'inc/bas.php';
+?>

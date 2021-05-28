@@ -1,0 +1,169 @@
+.vert {
+  color: #157347;
+}
+
+p, h1 {
+  color: #ece6e6;
+  letter-spacing: 2px;
+}
+
+.espace {
+  letter-spacing: 2px;
+}
+
+.titreChoix {
+  font-family: 'Give You Glory', cursive;
+  font-size: 5em;
+}
+
+.typoChoix {
+  font-family: 'Give You Glory', cursive;
+  font-size: 2em;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: grey;
+}
+
+nav.centrer {
+  display: block;
+  margin: 0 auto;
+}
+
+nav li .centra {
+  text-align: center;
+}
+
+nav a {
+  padding: 2em;
+}
+
+nav a:hover {
+  color: #ece6e6;
+}
+
+nav li:hover {
+  background-color: #157347;
+}
+
+.lienVert {
+  color: #157347;
+  text-decoration: none;
+}
+
+.lienBlanc {
+  color: #ece6e6;
+}
+
+.lienBlanc:hover {
+  color: #ece6e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.liVert:active {
+  background-color: #157347;
+}
+
+:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: none !important;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.accordion-button::after {
+  color: red;
+}
+
+.carousselAccueil img {
+  width: 100%;
+  max-height: 700px;
+}
+
+footer a {
+  color: #157347;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #cc1616;
+}
+
+footer .icon-fb {
+  color: #157347;
+}
+
+.produit-menu-img {
+  width: 20%;
+  float: left;
+}
+
+.img-curvy {
+  border-radius: 3rem;
+}
+
+.curve {
+  border-radius: 3rem;
+}
+
+.fas .fa-plus-circle {
+  font-size: 3rem;
+}
+
+.cache {
+  display: none;
+}
+
+.rad {
+  border-radius: 15px;
+}
+
+.food-menu-img {
+  width: 20%;
+}
+
+.card:hover {
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+}
+
+.card-shaw {
+  -webkit-box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 5px 15px 5px rgba(0, 0, 0, 0.65);
+}
+
+@media screen and (max-width: 768px) {
+  #blocResponsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  div#sectionR2 {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+/*# sourceMappingURL=style.css.map */

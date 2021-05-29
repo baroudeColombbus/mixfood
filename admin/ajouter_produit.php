@@ -4,6 +4,9 @@ require_once 'inc/init.php';
 require_once 'inc/functions.php';
 
 
+
+
+
 if (!empty($_POST)) {
     //On verify que le formulaire a bien été envoyer
     // on nettoie le formulaire en utilisant htmlspecialchars
@@ -42,7 +45,7 @@ if (!empty($_POST)) {
 
         $produit_image = htmlspecialchars($_FILES['produit_image']['name']); //produit_image
 
-        if($produit_image != ""){
+        if ($produit_image != "") {
 
             // auto rename OUR image
             // get the extension of our image (jpg, png ,gif, etc) e.g "special.food.jpg"
@@ -67,7 +70,7 @@ if (!empty($_POST)) {
                 // STOP 
                 die();
             }
-    }
+        }
     } else {
 
         $produit_image = "";
@@ -100,7 +103,8 @@ require_once 'inc/haut.php';
 ?>
 
 <div class="container m-auto">
-    <div class="row"><!-- début row -->
+    <div class="row">
+        <!-- début row -->
         <div class="col-sm-12 col-md-6 mx-auto p-4">
 
             <div class="card m-auto alert alert-light border border-warning">
@@ -125,6 +129,43 @@ require_once 'inc/haut.php';
                     </div>
 
                     <div class="form-group mb-3">
+                        <select class="form-select form-select-sm" name="categorie" id="categorie" aria-label="choix categorie">
+                            <?php
+                            // on recupere toutes les catégorie
+                            $sql =  $pdoSITE->prepare("SELECT * FROM produit_categorie WHERE disponible = 'oui' ");
+                            // on execute la requete
+                            $sql->execute();
+
+                            // on assigne toutes les données dans a $requete, by default PDO::FETCH_BOTH is used
+                            $result =   $sql->fetchAll();
+                            //print_r($result);
+
+                            // compte le nombre de catégorie
+                            $count_nbr_cat =  $sql->rowCount();
+                            if ($count_nbr_cat > 0) {
+
+                                // pour chaque categories dans la bdd, on affiche ID et le nom comme option
+
+                                foreach ($result as $row) {
+                                    $id_categorie = $row['id_categorie'];
+                                    $nom_categorie = $row['nom_categorie'];
+
+
+                            ?> ;
+                                    <option value="<?php echo $id_categorie; ?>"><?php echo $nom_categorie; ?></option>';
+                            <?php
+                                }
+                            } else {
+
+                                echo ' <option value=\"0\">Categorie n\'existe pas</option>';
+                            }
+
+                            ?>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3">
                         <label for="produit_ingredients" class="form-label">Ingrédients</label>
                         <textarea class="form-control text-right" name="produit_ingredients" id="produit_ingredients" rows="3"></textarea>
                     </div>
@@ -141,8 +182,6 @@ require_once 'inc/haut.php';
                             <label class="form-check-label" for="m">non</label>
                         </div>
                     </div>
-
-
 
                     <div class="form-group mb-3">
                         <label for="produit_disponible ">Disponibilité du produit</label>

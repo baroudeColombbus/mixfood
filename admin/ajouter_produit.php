@@ -16,6 +16,7 @@ if (!empty($_POST)) {
     $produit_prix = htmlspecialchars($_POST['produit_prix']);
 
     $produit_ingredients = htmlspecialchars($_POST['produit_ingredients']);
+    $id_categorie = $_POST['categorie'];
 
     // On verify le button radio selectionner
     if (isset($_POST['produit_vedette'])) {
@@ -77,7 +78,7 @@ if (!empty($_POST)) {
     }
 
     // 2. On prepare la requête sql . Les données seront persister des que le bouton submit est activé
-    $sql = $pdoSITE->prepare("INSERT INTO produit SET  nom_produit ='$nom_produit', produit_image ='$produit_image',  produit_ingredients='$produit_ingredients',produit_prix='$produit_prix', produit_vedette='$produit_vedette',produit_disponible ='$produit_disponible' ");
+    $sql = $pdoSITE->prepare("INSERT INTO produit SET  id_categorie='$id_categorie', nom_produit ='$nom_produit', produit_image ='$produit_image',  produit_ingredients='$produit_ingredients',produit_prix='$produit_prix', produit_vedette='$produit_vedette',produit_disponible ='$produit_disponible' ");
 
 
     // On execute la requête
